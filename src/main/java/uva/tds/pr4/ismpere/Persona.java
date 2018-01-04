@@ -127,10 +127,18 @@ public class Persona{
 		// TODO Auto-generated method stub
 		
 	}
-	public void setColado(boolean b) {
+	/**
+	 * Pone a una Persona como colada o como no colada por otra Persona
+	 * @param c colada
+	 */
+	public void setColado(boolean c) {
 		// TODO Auto-generated method stub
 		
 	}
+	/**
+	 * Devuelve si una Persona ha sido colada por otra Persona o no
+	 * @return colada
+	 */
 	public boolean getColado() {
 		// TODO Auto-generated method stub
 		return false;
