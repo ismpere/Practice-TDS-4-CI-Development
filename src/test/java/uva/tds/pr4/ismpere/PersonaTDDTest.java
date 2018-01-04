@@ -169,4 +169,24 @@ public class PersonaTDDTest {
 		assertArrayEquals(p1, a.getAmigos());
 		assertArrayEquals(p2, a.getConocidos());
 	}
+	
+	@Test
+	public void testSetColadoPersonaValido() {
+		Persona a = new Persona("1", "a");
+		
+		a.setColado(true);
+		
+		assertNotNull(a);
+	}
+	
+	@Test
+	public void testGetColadoPersonaValido() {
+		Persona a = new Persona("1", "a");
+		
+		a.setColado(true);
+		boolean c = a.getColado();
+		
+		assertNotNull(a);
+		assertTrue(c);
+	}
 }
