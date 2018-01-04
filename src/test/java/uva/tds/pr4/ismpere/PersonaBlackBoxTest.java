@@ -284,4 +284,44 @@ public class PersonaBlackBoxTest {
 		
 		a.addAmigo(b);
 	}
+	
+	@Test(expected = AssertionError.class)
+	public void testRemoveAmigoNuloNoValido() {
+		Persona a = new Persona("1", "a");
+		
+		a.removeAmigo(null);
+	}
+	
+	@Test(expected = AssertionError.class)
+	public void testRemoveAmigoNoEsAmigoNoValido() {
+		Persona a = new Persona("1", "a");
+		Persona b = new Persona("2", "b");
+		
+		a.removeAmigo(b);
+	}
+	
+	@Test(expected = AssertionError.class)
+	public void testRemoveAmigoNoEsAmigoEsConocidoNoValido() {
+		Persona a = new Persona("1", "a");
+		Persona b = new Persona("2", "b");
+		
+		a.addConocido(b);
+		
+		a.removeAmigo(b);
+	}
+	
+	@Test(expected = AssertionError.class)
+	public void testRemoveAmigoThisNoValido() {
+		Persona a = new Persona("1", "a");
+		
+		a.removeAmigo(a);
+	}
+	
+	@Test(expected = AssertionError.class)
+	public void testRemoveAmigoIgualNoValido() {
+		Persona a = new Persona("1", "a");
+		Persona b = new Persona("1", "b");
+		
+		a.removeAmigo(b);
+	}
 }
