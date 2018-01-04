@@ -30,11 +30,25 @@ public class Persona{
 		// TODO Auto-generated method stub
 		return null;
 	}
-	public void setId(String string) {
+	/**
+	 * Cambia el id de la Persona
+	 * @param id
+	 * @assert.pre id!=null
+	 * @assert.pre id.length>0
+	 * @assert.pre id.length<10
+	 */
+	public void setId(String id) {
 		// TODO Auto-generated method stub
 		
 	}
-	public void setNombre(String string) {
+	/**
+	 * Cambia el nombre de la persona
+	 * @param nombre
+	 * @assert.pre nombre!=null
+	 * @assert.pre nombre.length>0
+	 * @assert.pre nombre.length<50
+	 */
+	public void setNombre(String nombre) {
 		// TODO Auto-generated method stub
 		
 	}
