@@ -15,7 +15,7 @@ public class Persona{
 	 * @assert.pre id.length>0
 	 * @assert.pre id.length<10
 	 * @assert.pre nombre.length>0
-	 * @assert.pre nombre.length<50
+	 * @assert.pre nombre.length<51
 	 */
 	public Persona(String id, String nombre) {
 		// TODO Auto-generated constructor stub
