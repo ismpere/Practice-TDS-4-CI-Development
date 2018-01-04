@@ -34,4 +34,60 @@ public class PersonaTDDTest {
 		assertNotNull(a);
 		assertEquals("a", name);
 	}
+	
+	@Test
+	public void testAddConocidoPersonaValido() {
+		Persona a = new Persona("1", "a");
+		Persona b = new Persona("2", "b");
+		
+		a.addConocido(b);
+		
+		assertNotNull(a);
+		assertNotNull(b);
+	}
+	
+	@Test
+	public void testGetConocidosPersonaValido() {
+		Persona a = new Persona("1", "a");
+		Persona b = new Persona("2", "b");
+		
+		a.addConocido(b);
+		
+		Persona[] p = a.getConocidos();
+		
+		Persona[] pAux = {b};
+		
+		assertNotNull(a);
+		assertNotNull(b);
+		assertArrayEquals(pAux, p);
+	}
+	
+	@Test
+	public void testAddAmigoPersonaValido() {
+		Persona a = new Persona("1", "a");
+		Persona b = new Persona("2", "b");
+		
+		a.addConocido(b);
+		a.addAmigo(b);
+		
+		assertNotNull(a);
+		assertNotNull(b);
+	}
+	
+	@Test
+	public void testGetAmigosPersonaValido() {
+		Persona a = new Persona("1", "a");
+		Persona b = new Persona("2", "b");
+		
+		a.addConocido(b);
+		a.addAmigo(b);
+		
+		Persona[] p = a.getAmigos();
+		
+		Persona[] pAux = {b};
+		
+		assertNotNull(a);
+		assertNotNull(b);
+		assertArrayEquals(pAux, p);
+	}
 }
