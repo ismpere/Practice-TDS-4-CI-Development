@@ -59,24 +59,24 @@ public class PersonaBlackBoxTest {
 	}
 	
 	@Test
-	public void testIsConocidoFalsePersonaThisValido() {
+	public void testIsConocidoTruePersonaThisValido() {
 		Persona a = new Persona("1", "a");
 		
 		boolean c = a.isConocido(a);
 		
 		assertNotNull(a);
-		assertFalse(c);
+		assertTrue(c);
 	}
 	
 	@Test
-	public void testIsConocidoFalsePersonaIgualValido() {
+	public void testIsConocidoTruePersonaIgualValido() {
 		Persona a = new Persona("1", "a");
 		Persona b = new Persona("1", "b");
 		
 		boolean c = a.isConocido(b);
 		
 		assertNotNull(a);
-		assertFalse(c);
+		assertTrue(c);
 	}
 	
 	@Test
@@ -106,13 +106,13 @@ public class PersonaBlackBoxTest {
 	}
 	
 	@Test
-	public void testIsAmigoFalsePersonaThisValido() {
+	public void testIsAmigoTruePersonaThisValido() {
 		Persona a = new Persona("1", "a");
 		
 		boolean c = a.isAmigo(a);
 		
 		assertNotNull(a);
-		assertFalse(c);
+		assertTrue(c);
 	}
 	
 	@Test
@@ -123,7 +123,7 @@ public class PersonaBlackBoxTest {
 		boolean c = a.isAmigo(b);
 		
 		assertNotNull(a);
-		assertFalse(c);
+		assertTrue(c);
 	}
 
 	@Test(expected = AssertionError.class)
