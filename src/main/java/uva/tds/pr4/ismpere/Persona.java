@@ -86,11 +86,21 @@ public class Persona{
 		// TODO Auto-generated method stub
 		return null;
 	}
-	public boolean isConocido(Persona b) {
+	/**
+	 * Devuelve si una persona es conocido
+	 * @param p Persona a evaluar si es conocido
+	 * @return esConocido
+	 */
+	public boolean isConocido(Persona p) {
 		// TODO Auto-generated method stub
 		return false;
 	}
-	public boolean isAmigo(Persona b) {
+	/**
+	 * Devuelve si una Persona es amigo
+	 * @param p Persona a evaluar si es amigo
+	 * @return isAmigo
+	 */
+	public boolean isAmigo(Persona p) {
 		// TODO Auto-generated method stub
 		return false;
 	}
