@@ -188,6 +188,7 @@ public class Persona{
 	 * Incrementa en uno el numero de personas coladas por Persona en la cola
 	 * @assert.pre isInColaDeAmigos()
 	 * @assert.pre !colado()
+	 * @assert.pre tieneReservas()
 	 */
 	public void addPersonaColada() {
 		// TODO Auto-generated method stub

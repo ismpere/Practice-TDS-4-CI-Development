@@ -145,6 +145,29 @@ public class PersonaBlackBoxTest {
 		assertNotNull(a);
 		assertFalse(a.isInColaDeAmigos());
 	}
+	
+	@Test
+	public void testSetNumeroDeReservasDiezReservaPersonaValido() {
+		Persona a = new Persona("1", "a");
+		a.setInColaDeAmigos(true);
+		
+		a.setReservas(10);
+		
+		assertNotNull(a);
+		assertEquals(10, a.getReservas());
+	}
+	
+	@Test
+	public void testGetNumeroDeReservasUnaReservaPersonaValido() {
+		Persona a = new Persona("1", "a");
+		a.setInColaDeAmigos(true);
+		a.setReservas(1);
+		
+		int r = a.getReservas();
+		
+		assertNotNull(a);
+		assertEquals(1, r);
+	}
 
 	@Test(expected = AssertionError.class)
 	public void testInicializaPersonaIdNuloNoValido() {
