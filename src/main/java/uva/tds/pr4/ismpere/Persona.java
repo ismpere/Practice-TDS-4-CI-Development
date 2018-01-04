@@ -55,6 +55,7 @@ public class Persona{
 	/**
 	 * Aniade un conocido de la Persona
 	 * @param p Persona conocida
+	 * @assert.pre !isConocido(p)
 	 */
 	public void addConocido(Persona p) {
 		// TODO Auto-generated method stub
@@ -72,6 +73,8 @@ public class Persona{
 	/**
 	 * Aniade un amigo de la Persona
 	 * @param p Persona amiga
+	 * @assert.pre isConocido(p)
+	 * @assert.pre !isAmigo(p)
 	 */
 	public void addAmigo(Persona p) {
 		// TODO Auto-generated method stub
