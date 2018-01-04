@@ -117,7 +117,13 @@ public class Persona{
 		// TODO Auto-generated method stub
 		return false;
 	}
-	public void removeAmigo(Persona b) {
+	/**
+	 * Elimina un amigo de la Persona
+	 * @param p Persona amigo a eliminar
+	 * @assert.pre p!=null
+	 * @assert.pre isAmigo(p)
+	 */
+	public void removeAmigo(Persona p) {
 		// TODO Auto-generated method stub
 		
 	}
