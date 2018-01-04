@@ -161,4 +161,28 @@ public class Persona{
 		// TODO Auto-generated method stub
 		return false;
 	}
+	public void setReservas(int i) {
+		// TODO Auto-generated method stub
+		
+	}
+	public int getReservas() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	public void addPersonaColada() {
+		// TODO Auto-generated method stub
+		
+	}
+	public Object getReservasRestantes() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public boolean tieneReservas() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	public boolean tieneReservasRestantes() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

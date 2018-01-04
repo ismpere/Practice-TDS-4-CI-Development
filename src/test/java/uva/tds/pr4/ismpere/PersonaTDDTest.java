@@ -247,7 +247,7 @@ public class PersonaTDDTest {
 		
 		a.setReservas(1);
 		
-		a.addPersonaColada(b);
+		a.addPersonaColada();
 		
 		assertNotNull(a);
 		assertEquals(true, b.colado());
