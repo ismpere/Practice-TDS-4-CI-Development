@@ -240,18 +240,13 @@ public class PersonaTDDTest {
 	@Test
 	public void testAddPersonaColadaPersonaValido() {
 		Persona a = new Persona("1", "a");
-		Persona b = new Persona("2", "b");
 		a.setInColaDeAmigos(true);
-		
-		a.addConocido(b);
-		a.addAmigo(b);
 		
 		a.setReservas(1);
 		
 		a.addPersonaColada();
 		
 		assertNotNull(a);
-		assertEquals(true, b.colado());
 	}
 	
 	@Test

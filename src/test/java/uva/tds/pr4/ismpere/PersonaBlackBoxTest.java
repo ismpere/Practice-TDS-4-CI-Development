@@ -416,4 +416,33 @@ public class PersonaBlackBoxTest {
 		
 		a.tieneReservas();
 	}
+	
+	@Test(expected = AssertionError.class)
+	public void testAddPersonaColadaSinReservasPersonaNoValido() {
+		Persona a = new Persona("1", "a");
+		a.setInColaDeAmigos(true);
+		
+		a.addPersonaColada();
+	}
+	
+	@Test(expected = AssertionError.class)
+	public void testAddPersonaColadaReservasRestantesPersonaNoValido() {
+		Persona a = new Persona("1", "a");
+		a.setInColaDeAmigos(true);
+		
+		a.setReservas(1);
+		
+		a.addPersonaColada();
+		a.addPersonaColada();
+	}
+	
+	@Test(expected = AssertionError.class)
+	public void testAddPersonaColadaPersonaColadaNoValido() {
+		Persona a = new Persona("1", "a");
+		a.setInColaDeAmigos(true);
+		
+		a.setColado(true);
+		
+		a.addPersonaColada();
+	}
 }
