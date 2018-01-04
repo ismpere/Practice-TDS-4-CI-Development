@@ -344,4 +344,53 @@ public class PersonaBlackBoxTest {
 		
 		a.removeAmigo(b);
 	}
+	
+	@Test(expected = AssertionError.class)
+	public void testSetColadoNotInColaDeAmigosNoValido() {
+		Persona a = new Persona("1", "a");
+		
+		a.setColado(true);
+	}
+	
+	@Test(expected = AssertionError.class)
+	public void testColadoNotInColaDeAmigosNoValido() {
+		Persona a = new Persona("1", "a");
+		
+		a.colado();
+	}
+	
+	@Test(expected = AssertionError.class)
+	public void testSetReservasNotInColaDeAmigosNoValido() {
+		Persona a = new Persona("1", "a");
+		
+		a.setReservas(1);
+	}
+	
+	@Test(expected = AssertionError.class)
+	public void testGetReservasNotInColaDeAmigosNoValido() {
+		Persona a = new Persona("1", "a");
+		
+		a.getReservas();
+	}
+	
+	@Test(expected = AssertionError.class)
+	public void testAddPersonaColadaNotInColaDeAmigosNoValido() {
+		Persona a = new Persona("1", "a");
+		
+		a.addPersonaColada();
+	}
+	
+	@Test(expected = AssertionError.class)
+	public void testGetReservasRestantesNotInColaDeAmigosNoValido() {
+		Persona a = new Persona("1", "a");
+		
+		a.getReservasRestantes();
+	}
+	
+	@Test(expected = AssertionError.class)
+	public void testTieneReservasNotInColaDeAmigosNoValido() {
+		Persona a = new Persona("1", "a");
+		
+		a.tieneReservas();
+	}
 }

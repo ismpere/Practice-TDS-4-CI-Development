@@ -198,9 +198,9 @@ public class Persona{
 	 * @return reservasRestantes
 	 * @assert.pre isInColaDeAmigos()
 	 */
-	public Object getReservasRestantes() {
+	public int getReservasRestantes() {
 		// TODO Auto-generated method stub
-		return null;
+		return 0;
 	}
 	/**
 	 * Devuelve si una Persona tiene reservas de sitio en la cola
@@ -208,15 +208,6 @@ public class Persona{
 	 * @assert.pre isInColaDeAmigos()
 	 */
 	public boolean tieneReservas() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-	/**
-	 * Devuelve si una Persona tiene alguna reserva de sitio restante para la cola
-	 * @return tieneReservasRestantes
-	 * @assert.pre isInColaDeAmigos()
-	 */
-	public boolean tieneReservasRestantes() {
 		// TODO Auto-generated method stub
 		return false;
 	}
