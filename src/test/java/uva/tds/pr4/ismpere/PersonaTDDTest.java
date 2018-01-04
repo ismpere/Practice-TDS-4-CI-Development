@@ -214,4 +214,73 @@ public class PersonaTDDTest {
 		assertNotNull(a);
 		assertTrue(c);
 	}
+	
+	@Test
+	public void testSetNumeroDeReservasUnaReservaPersonaValido() {
+		Persona a = new Persona("1", "a");
+		a.setInColaDeAmigos(true);
+		
+		a.setReservas(1);
+		
+		assertNotNull(a);
+	}
+	
+	@Test
+	public void testGetNumeroDeReservasNingunaReservaPersonaValido() {
+		Persona a = new Persona("1", "a");
+		a.setInColaDeAmigos(true);
+		
+		int r = a.getReservas();
+		
+		assertNotNull(a);
+		assertEquals(0, r);
+	}
+	
+	@Test
+	public void testAddPersonaColadaPersonaValido() {
+		Persona a = new Persona("1", "a");
+		Persona b = new Persona("2", "b");
+		a.setInColaDeAmigos(true);
+		
+		a.addConocido(b);
+		a.addAmigo(b);
+		
+		a.setReservas(1);
+		
+		a.addPersonaColada(b);
+		
+		assertNotNull(a);
+		assertEquals(true, b.colado());
+	}
+	
+	@Test
+	public void testGetReservasRestantesNingunaReservaPersonaValido() {
+		Persona a = new Persona("1", "a");
+		a.setInColaDeAmigos(true);
+		
+		assertNotNull(a);
+		assertEquals(0, a.getReservasRestantes());
+	}
+	
+	@Test
+	public void testTieneReservasNingunaReservaPersonaValido() {
+		Persona a = new Persona("1", "a");
+		a.setInColaDeAmigos(true);
+		
+		boolean t = a.tieneReservas();
+		
+		assertNotNull(a);
+		assertFalse(t);
+	}
+	
+	@Test
+	public void testTieneReservasRestantesNingunaReservaPersonaValido() {
+		Persona a = new Persona("1", "a");
+		a.setInColaDeAmigos(true);
+		
+		boolean t = a.tieneReservasRestantes();
+		
+		assertNotNull(a);
+		assertFalse(t);
+	}
 }
