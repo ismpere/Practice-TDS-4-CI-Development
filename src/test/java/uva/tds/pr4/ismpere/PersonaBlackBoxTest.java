@@ -211,4 +211,77 @@ public class PersonaBlackBoxTest {
 		
 		a.isAmigo(null);
 	}
+	
+	@Test(expected = AssertionError.class)
+	public void testAddConocidoPersonaNuloNoValido() {
+		Persona a = new Persona("1", "a");
+		
+		a.addConocido(null);
+	}
+	
+	@Test(expected = AssertionError.class)
+	public void testAddConocidoPersonaConocidaNoValido() {
+		Persona a = new Persona("1", "a");
+		Persona b = new Persona("2", "b");
+		
+		a.addConocido(b);
+		
+		a.addConocido(b);
+	}
+	
+	@Test(expected = AssertionError.class)
+	public void testAddConocidoPersonaThisNoValido() {
+		Persona a = new Persona("1", "a");
+		
+		a.addConocido(a);
+	}
+	
+	@Test(expected = AssertionError.class)
+	public void testAddConocidoPersonaIgualNoValido() {
+		Persona a = new Persona("1", "a");
+		Persona b = new Persona("1", "b");
+		
+		a.addConocido(b);
+	}
+	
+	@Test(expected = AssertionError.class)
+	public void testAddAmigoPersonaNuloNoValido() {
+		Persona a = new Persona("1", "a");
+		
+		a.addAmigo(null);
+	}
+	
+	@Test(expected = AssertionError.class)
+	public void testAddAmigoPersonaNoConocidaNoValido() {
+		Persona a = new Persona("1", "a");
+		Persona b = new Persona("2", "b");
+		
+		a.addAmigo(b);
+	}
+	
+	@Test(expected = AssertionError.class)
+	public void testAddAmigoPersonaAmigoNoValido() {
+		Persona a = new Persona("1", "a");
+		Persona b = new Persona("2", "b");
+		
+		a.addConocido(b);
+		a.addAmigo(b);
+		
+		a.addAmigo(b);
+	}
+	
+	@Test(expected = AssertionError.class)
+	public void testAddAmigoPersonaThisNoValido() {
+		Persona a = new Persona("1", "a");
+		
+		a.addAmigo(a);
+	}
+	
+	@Test(expected = AssertionError.class)
+	public void testAddAmigoPersonaIgualNoValido() {
+		Persona a = new Persona("1", "a");
+		Persona b = new Persona("1", "b");
+		
+		a.addAmigo(b);
+	}
 }
