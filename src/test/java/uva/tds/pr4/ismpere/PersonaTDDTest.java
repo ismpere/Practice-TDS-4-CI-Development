@@ -36,6 +36,26 @@ public class PersonaTDDTest {
 	}
 	
 	@Test
+	public void testSetIdPequenioPersonaValido() {
+		Persona a = new Persona("1", "a");
+		
+		a.setId("2");
+		
+		assertNotNull(a);
+		assertEquals("2", a.getId());
+	}
+	
+	@Test
+	public void testSetNombrePequenioPersonaValido() {
+		Persona a = new Persona("1", "a");
+		
+		a.setNombre("b");
+		
+		assertNotNull(a);
+		assertEquals("b", a.getNombre());
+	}
+	
+	@Test
 	public void testAddConocidoPersonaValido() {
 		Persona a = new Persona("1", "a");
 		Persona b = new Persona("2", "b");
