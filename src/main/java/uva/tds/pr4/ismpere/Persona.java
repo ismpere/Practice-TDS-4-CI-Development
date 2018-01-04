@@ -30,6 +30,14 @@ public class Persona{
 		// TODO Auto-generated method stub
 		return null;
 	}
+	public void setId(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setNombre(String string) {
+		// TODO Auto-generated method stub
+		
+	}
 	/**
 	 * Aniade un conocido de la Persona
 	 * @param p Persona conocida
@@ -64,5 +72,4 @@ public class Persona{
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
 }
