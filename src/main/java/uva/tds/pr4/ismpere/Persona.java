@@ -130,6 +130,7 @@ public class Persona{
 	/**
 	 * Pone a una Persona como colada o como no colada por otra Persona
 	 * @param c colada
+	 * @assert.pre isInColaDeAmigos()
 	 */
 	public void setColado(boolean c) {
 		// TODO Auto-generated method stub
@@ -138,15 +139,24 @@ public class Persona{
 	/**
 	 * Devuelve si una Persona ha sido colada por otra Persona o no
 	 * @return colada
+	 * isInColaDeAmigos()
 	 */
 	public boolean colado() {
 		// TODO Auto-generated method stub
 		return false;
 	}
+	/**
+	 * Identifica si una Persona está o no en una ColaDeAmigos
+	 * @param b está en una ColaDeAmigos
+	 */
 	public void setInColaDeAmigos(boolean b) {
 		// TODO Auto-generated method stub
 		
 	}
+	/**
+	 * Devuelve si una Persona esta en una ColaDeAmigos
+	 * @return estaEnColaDeAmigos
+	 */
 	public boolean isInColaDeAmigos() {
 		// TODO Auto-generated method stub
 		return false;
