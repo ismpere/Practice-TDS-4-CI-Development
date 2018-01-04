@@ -10,6 +10,8 @@ public class Persona{
 	 * Constructor por defecto de la clase Persona
 	 * @param id
 	 * @param nombre
+	 * @assert.pre id!=null
+	 * @assert.pre nombre!=null
 	 */
 	public Persona(String id, String nombre) {
 		// TODO Auto-generated constructor stub
@@ -55,6 +57,7 @@ public class Persona{
 	/**
 	 * Aniade un conocido de la Persona
 	 * @param p Persona conocida
+	 * @assert.pre p!=null
 	 * @assert.pre !isConocido(p)
 	 */
 	public void addConocido(Persona p) {
@@ -73,6 +76,7 @@ public class Persona{
 	/**
 	 * Aniade un amigo de la Persona
 	 * @param p Persona amiga
+	 * @assert.pre p!=null
 	 * @assert.pre isConocido(p)
 	 * @assert.pre !isAmigo(p)
 	 */
@@ -93,6 +97,7 @@ public class Persona{
 	 * Devuelve si una persona es conocido
 	 * @param p Persona a evaluar si es conocido
 	 * @return esConocido
+	 * @assert.pre p!=null
 	 */
 	public boolean isConocido(Persona p) {
 		// TODO Auto-generated method stub
@@ -102,6 +107,7 @@ public class Persona{
 	 * Devuelve si una Persona es amigo
 	 * @param p Persona a evaluar si es amigo
 	 * @return isAmigo
+	 * @assert.pre p!=null
 	 */
 	public boolean isAmigo(Persona p) {
 		// TODO Auto-generated method stub
