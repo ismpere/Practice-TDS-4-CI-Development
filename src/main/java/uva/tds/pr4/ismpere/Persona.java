@@ -139,7 +139,7 @@ public class Persona{
 	/**
 	 * Devuelve si una Persona ha sido colada por otra Persona o no
 	 * @return colada
-	 * isInColaDeAmigos()
+	 * @assert.pre isInColaDeAmigos()
 	 */
 	public boolean colado() {
 		// TODO Auto-generated method stub
@@ -161,26 +161,59 @@ public class Persona{
 		// TODO Auto-generated method stub
 		return false;
 	}
-	public void setReservas(int i) {
+	/**
+	 * Añade las reservas de sitio que hace una Persona para la cola
+	 * @param n Numero de reservas
+	 * @assert.pre isInColaDeAmigos()
+	 * @assert.pre !colado()
+	 * @assert.pre n>0
+	 * @assert.pre n<11
+	 */
+	public void setReservas(int n) {
 		// TODO Auto-generated method stub
 		
 	}
+	/**
+	 * Devuelve el numero de reservas de sitio que ha hecho una Persona en la cola
+	 * @return reservas
+	 * @assert.pre isInColaDeAmigos()
+	 */
 	public int getReservas() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+	/**
+	 * Incrementa en uno el numero de personas coladas por Persona en la cola
+	 * @assert.pre isInColaDeAmigos()
+	 * @assert.pre !colado()
+	 */
 	public void addPersonaColada() {
 		// TODO Auto-generated method stub
 		
 	}
+	/**
+	 * Devuelve el numero de reservas restantes para la cola que tiene una Persona
+	 * @return reservasRestantes
+	 * @assert.pre isInColaDeAmigos()
+	 */
 	public Object getReservasRestantes() {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	/**
+	 * Devuelve si una Persona tiene reservas de sitio en la cola
+	 * @return tieneReservas
+	 * @assert.pre isInColaDeAmigos()
+	 */
 	public boolean tieneReservas() {
 		// TODO Auto-generated method stub
 		return false;
 	}
+	/**
+	 * Devuelve si una Persona tiene alguna reserva de sitio restante para la cola
+	 * @return tieneReservasRestantes
+	 * @assert.pre isInColaDeAmigos()
+	 */
 	public boolean tieneReservasRestantes() {
 		// TODO Auto-generated method stub
 		return false;
