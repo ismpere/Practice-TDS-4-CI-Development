@@ -3,7 +3,9 @@ package uva.tds.pr4.ismpere;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
+@Category({Unit.class, TDD.class})
 public class PersonaTDDTest {
 
 	@Test

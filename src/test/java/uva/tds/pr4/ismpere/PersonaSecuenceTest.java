@@ -5,9 +5,11 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
+@Category({Unit.class, Secuence.class})
 public class PersonaSecuenceTest {
-	
+
 private Persona a, b, c;
 	
 	@Before
