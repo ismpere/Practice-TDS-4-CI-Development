@@ -45,6 +45,86 @@ public class PersonaBlackBoxTest {
 		assertEquals("1", a.getId());
 		assertEquals("CincoCincoCincoCincoCincoCincoCincoCincoCincoCinco", a.getNombre());
 	}
+	
+	@Test
+	public void testIsConocidoFalsePersonaValido() {
+		Persona a = new Persona("1", "a");
+		Persona b = new Persona("2", "b");
+		
+		boolean c = a.isConocido(b);
+		
+		assertNotNull(a);
+		assertNotNull(b);
+		assertFalse(c);
+	}
+	
+	@Test
+	public void testIsConocidoTruePersonaThisValido() {
+		Persona a = new Persona("1", "a");
+		
+		boolean c = a.isConocido(a);
+		
+		assertNotNull(a);
+		assertTrue(c);
+	}
+	
+	@Test
+	public void testIsConocidoTruePersonaIgualValido() {
+		Persona a = new Persona("1", "a");
+		Persona b = new Persona("1", "b");
+		
+		boolean c = a.isConocido(b);
+		
+		assertNotNull(a);
+		assertTrue(c);
+	}
+	
+	@Test
+	public void testIsAmigoFalseIsConocidoPersonaValido() {
+		Persona a = new Persona("1", "a");
+		Persona b = new Persona("2", "b");
+		
+		a.isConocido(b);
+		
+		boolean c = a.isAmigo(b);
+		
+		assertNotNull(a);
+		assertNotNull(b);
+		assertFalse(c);
+	}
+	
+	@Test
+	public void testIsAmigoFalsePersonaValido() {
+		Persona a = new Persona("1", "a");
+		Persona b = new Persona("2", "b");
+		
+		boolean c = a.isAmigo(b);
+		
+		assertNotNull(a);
+		assertNotNull(b);
+		assertFalse(c);
+	}
+	
+	@Test
+	public void testIsAmigoTruePersonaThisValido() {
+		Persona a = new Persona("1", "a");
+		
+		boolean c = a.isAmigo(a);
+		
+		assertNotNull(a);
+		assertTrue(c);
+	}
+	
+	@Test
+	public void testIsAmigoTruePersonaIgualValido() {
+		Persona a = new Persona("1", "a");
+		Persona b = new Persona("1", "b");
+		
+		boolean c = a.isAmigo(b);
+		
+		assertNotNull(a);
+		assertTrue(c);
+	}
 
 	@Test(expected = AssertionError.class)
 	public void testInicializaPersonaIdNuloNoValido() {
@@ -116,5 +196,19 @@ public class PersonaBlackBoxTest {
 		Persona a = new Persona("1", "a");
 		
 		a.setNombre("");
+	}
+	
+	@Test(expected = AssertionError.class)
+	public void testIsConocidoPersonaNuloNoValido() {
+		Persona a = new Persona("1", "a");
+		
+		a.isConocido(null);
+	}
+	
+	@Test(expected = AssertionError.class)
+	public void testIsAmigoPersonaNuloNoValido() {
+		Persona a = new Persona("1", "a");
+		
+		a.isAmigo(null);
 	}
 }
