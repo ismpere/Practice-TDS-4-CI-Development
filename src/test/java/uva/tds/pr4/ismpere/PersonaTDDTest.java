@@ -3,7 +3,9 @@ package uva.tds.pr4.ismpere;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
+@Category({Unit.class, TDD.class})
 public class PersonaTDDTest {
 
 	@Test
@@ -178,6 +180,7 @@ public class PersonaTDDTest {
 		a.setInColaDeAmigos(true);
 		
 		assertNotNull(a);
+		assertTrue(a.isInColaDeAmigos());
 	}
 	
 	@Test
@@ -190,6 +193,8 @@ public class PersonaTDDTest {
 		
 		assertNotNull(a);
 		assertTrue(i);
+		
+		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
 	
 	@Test
@@ -200,7 +205,7 @@ public class PersonaTDDTest {
 		a.setColado(true);
 		
 		assertNotNull(a);
-		assertEquals(true, a.colado());
+		assertTrue(a.colado());
 	}
 	
 	@Test
@@ -216,16 +221,6 @@ public class PersonaTDDTest {
 	}
 	
 	@Test
-	public void testSetNumeroDeReservasUnaReservaPersonaValido() {
-		Persona a = new Persona("1", "a");
-		a.setInColaDeAmigos(true);
-		
-		a.setReservas(1);
-		
-		assertNotNull(a);
-	}
-	
-	@Test
 	public void testGetNumeroDeReservasNingunaReservaPersonaValido() {
 		Persona a = new Persona("1", "a");
 		a.setInColaDeAmigos(true);
@@ -234,23 +229,33 @@ public class PersonaTDDTest {
 		
 		assertNotNull(a);
 		assertEquals(0, r);
+		
+		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
+	}
+	
+	@Test
+	public void testSetNumeroDeReservasUnaReservaPersonaValido() {
+		Persona a = new Persona("1", "a");
+		a.setInColaDeAmigos(true);
+		
+		a.setReservas(1);
+		
+		assertNotNull(a);
+		assertEquals(1, a.getReservas());
 	}
 	
 	@Test
 	public void testAddPersonaColadaPersonaValido() {
 		Persona a = new Persona("1", "a");
-		Persona b = new Persona("2", "b");
 		a.setInColaDeAmigos(true);
-		
-		a.addConocido(b);
-		a.addAmigo(b);
 		
 		a.setReservas(1);
 		
 		a.addPersonaColada();
 		
 		assertNotNull(a);
-		assertEquals(true, b.colado());
+		
+		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
 	
 	@Test
@@ -258,8 +263,12 @@ public class PersonaTDDTest {
 		Persona a = new Persona("1", "a");
 		a.setInColaDeAmigos(true);
 		
+		int r = a.getReservasRestantes();
+		
 		assertNotNull(a);
-		assertEquals(0, a.getReservasRestantes());
+		assertEquals(0, r);
+		
+		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
 	
 	@Test
@@ -271,16 +280,7 @@ public class PersonaTDDTest {
 		
 		assertNotNull(a);
 		assertFalse(t);
-	}
-	
-	@Test
-	public void testTieneReservasRestantesNingunaReservaPersonaValido() {
-		Persona a = new Persona("1", "a");
-		a.setInColaDeAmigos(true);
 		
-		boolean t = a.tieneReservasRestantes();
-		
-		assertNotNull(a);
-		assertFalse(t);
+		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
 }

@@ -15,7 +15,7 @@ public class Persona{
 	 * @assert.pre id.length>0
 	 * @assert.pre id.length<10
 	 * @assert.pre nombre.length>0
-	 * @assert.pre nombre.length<50
+	 * @assert.pre nombre.length<51
 	 */
 	public Persona(String id, String nombre) {
 		// TODO Auto-generated constructor stub
@@ -122,6 +122,8 @@ public class Persona{
 	 * @param p Persona amigo a eliminar
 	 * @assert.pre p!=null
 	 * @assert.pre isAmigo(p)
+	 * @assert.pre p!=this
+	 * @assert.pre !p.equals(this)
 	 */
 	public void removeAmigo(Persona p) {
 		// TODO Auto-generated method stub
@@ -186,6 +188,7 @@ public class Persona{
 	 * Incrementa en uno el numero de personas coladas por Persona en la cola
 	 * @assert.pre isInColaDeAmigos()
 	 * @assert.pre !colado()
+	 * @assert.pre tieneReservas()
 	 */
 	public void addPersonaColada() {
 		// TODO Auto-generated method stub
@@ -196,9 +199,9 @@ public class Persona{
 	 * @return reservasRestantes
 	 * @assert.pre isInColaDeAmigos()
 	 */
-	public Object getReservasRestantes() {
+	public int getReservasRestantes() {
 		// TODO Auto-generated method stub
-		return null;
+		return 0;
 	}
 	/**
 	 * Devuelve si una Persona tiene reservas de sitio en la cola
@@ -206,15 +209,6 @@ public class Persona{
 	 * @assert.pre isInColaDeAmigos()
 	 */
 	public boolean tieneReservas() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-	/**
-	 * Devuelve si una Persona tiene alguna reserva de sitio restante para la cola
-	 * @return tieneReservasRestantes
-	 * @assert.pre isInColaDeAmigos()
-	 */
-	public boolean tieneReservasRestantes() {
 		// TODO Auto-generated method stub
 		return false;
 	}
