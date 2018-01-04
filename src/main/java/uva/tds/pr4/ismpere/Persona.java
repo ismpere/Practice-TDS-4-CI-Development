@@ -127,4 +127,12 @@ public class Persona{
 		// TODO Auto-generated method stub
 		
 	}
+	public void setColado(boolean b) {
+		// TODO Auto-generated method stub
+		
+	}
+	public boolean getColado() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }
