@@ -86,4 +86,12 @@ public class Persona{
 		// TODO Auto-generated method stub
 		return null;
 	}
+	public boolean isConocido(Persona b) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	public boolean isAmigo(Persona b) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }
