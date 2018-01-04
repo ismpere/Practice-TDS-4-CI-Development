@@ -7,29 +7,31 @@ import org.junit.Test;
 public class PersonaTDDTest {
 
 	@Test
-	public void testInicializaPersonaValido() {
-		Persona a = new Persona("12509165V", "Ismael Perez");
+	public void testInicializaPersonaNombreIdPequenioValido() {
+		Persona a = new Persona("1", "a");
 		
 		assertNotNull(a);
+		assertEquals("1", a.getId());
+		assertEquals("a", a.getNombre());
 	}
 	
 	@Test
 	public void testGetIdPersonaValido() {
-		Persona a = new Persona("12509165V", "Ismael Perez");
+		Persona a = new Persona("1", "a");
 		
 		String id = a.getId();
 		
 		assertNotNull(a);
-		assertEquals("12509165V", id);
+		assertEquals("1", id);
 	}
 	
 	@Test
 	public void testGetNombrePersonaValido() {
-		Persona a = new Persona("12509165V", "Ismael Perez");
+		Persona a = new Persona("1", "a");
 		
 		String name = a.getNombre();
 		
 		assertNotNull(a);
-		assertEquals("Ismael Perez", name);
+		assertEquals("a", name);
 	}
 }
