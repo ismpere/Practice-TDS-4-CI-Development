@@ -56,6 +56,8 @@ public class PersonaBlackBoxTest {
 		assertNotNull(a);
 		assertNotNull(b);
 		assertFalse(c);
+		
+		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
 	
 	@Test
@@ -91,6 +93,8 @@ public class PersonaBlackBoxTest {
 		assertNotNull(a);
 		assertNotNull(b);
 		assertFalse(c);
+		
+		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
 	
 	@Test
@@ -103,6 +107,8 @@ public class PersonaBlackBoxTest {
 		assertNotNull(a);
 		assertNotNull(b);
 		assertFalse(c);
+		
+		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
 	
 	@Test
@@ -134,6 +140,8 @@ public class PersonaBlackBoxTest {
 		
 		assertNotNull(a);
 		assertFalse(i);
+		
+		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
 	
 	@Test
@@ -144,6 +152,20 @@ public class PersonaBlackBoxTest {
 		
 		assertNotNull(a);
 		assertFalse(a.isInColaDeAmigos());
+		
+		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
+	}
+	
+	@Test
+	public void testSetColadoFalsePersonaValido(){
+		Persona a = new Persona("1", "a");
+		
+		a.setColado(false);
+		
+		assertNotNull(a);
+		assertFalse(a.colado());
+		
+		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
 	
 	@Test
