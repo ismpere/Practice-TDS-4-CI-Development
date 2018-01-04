@@ -30,18 +30,36 @@ public class Persona{
 		// TODO Auto-generated method stub
 		return null;
 	}
-	public void addConocido(Persona b) {
+	/**
+	 * Aniade un conocido de la Persona
+	 * @param p Persona conocida
+	 */
+	public void addConocido(Persona p) {
 		// TODO Auto-generated method stub
 		
 	}
+	/**
+	 * Devuelve una lista de Persona conocidas por la Persona
+	 * Esta lista estara vacia si no tiene ningun conocido
+	 * @return conocidos
+	 */
 	public Persona[] getConocidos() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	public void addAmigo(Persona b) {
+	/**
+	 * Aniade un amigo de la Persona
+	 * @param p Persona amiga
+	 */
+	public void addAmigo(Persona p) {
 		// TODO Auto-generated method stub
 		
 	}
+	/**
+	 * Devuelve una lista de Persona amigos de nuestra Persona
+	 * Esta lista estara vacia si no tiene ningun amigo
+	 * @return amigos
+	 */
 	public Persona[] getAmigos() {
 		// TODO Auto-generated method stub
 		return null;
