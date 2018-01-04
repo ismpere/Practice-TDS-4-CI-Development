@@ -56,6 +56,36 @@ public class PersonaTDDTest {
 	}
 	
 	@Test
+	public void testIsConocidoPersonaValido() {
+		Persona a = new Persona("1", "a");
+		Persona b = new Persona("2", "b");
+		
+		a.addConocido(b);
+		
+		boolean c = a.isConocido(b);
+		
+		assertNotNull(a);
+		assertNotNull(b);
+		assertTrue(c);
+	}
+	
+	@Test
+	public void testIsAmigoPersonaValido() {
+		Persona a = new Persona("1", "a");
+		Persona b = new Persona("2", "b");
+		
+		a.addConocido(b);
+		a.addAmigo(b);
+		
+		boolean c = a.isAmigo(b);
+		
+		assertNotNull(a);
+		assertNotNull(b);
+		assertTrue(a.isConocido(b));
+		assertTrue(c);
+	}
+	
+	@Test
 	public void testAddConocidoPersonaValido() {
 		Persona a = new Persona("1", "a");
 		Persona b = new Persona("2", "b");
