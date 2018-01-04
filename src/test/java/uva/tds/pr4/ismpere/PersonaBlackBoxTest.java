@@ -125,6 +125,26 @@ public class PersonaBlackBoxTest {
 		assertNotNull(a);
 		assertTrue(c);
 	}
+	
+	@Test
+	public void testIsInColaDeAmigosFalsePersonaValido(){
+		Persona a = new Persona("1", "a");
+		
+		boolean i = a.isInColaDeAmigos();
+		
+		assertNotNull(a);
+		assertFalse(i);
+	}
+	
+	@Test
+	public void testSetInColaDeAmigosFalsePersonaValido(){
+		Persona a = new Persona("1", "a");
+		
+		a.setInColaDeAmigos(false);
+		
+		assertNotNull(a);
+		assertFalse(a.isInColaDeAmigos());
+	}
 
 	@Test(expected = AssertionError.class)
 	public void testInicializaPersonaIdNuloNoValido() {

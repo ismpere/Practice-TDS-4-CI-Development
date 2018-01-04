@@ -200,7 +200,7 @@ public class PersonaTDDTest {
 		a.setColado(true);
 		
 		assertNotNull(a);
-		assertEquals(true, a.colado());
+		assertTrue(a.colado());
 	}
 	
 	@Test
@@ -216,16 +216,6 @@ public class PersonaTDDTest {
 	}
 	
 	@Test
-	public void testSetNumeroDeReservasUnaReservaPersonaValido() {
-		Persona a = new Persona("1", "a");
-		a.setInColaDeAmigos(true);
-		
-		a.setReservas(1);
-		
-		assertNotNull(a);
-	}
-	
-	@Test
 	public void testGetNumeroDeReservasNingunaReservaPersonaValido() {
 		Persona a = new Persona("1", "a");
 		a.setInColaDeAmigos(true);
@@ -234,6 +224,17 @@ public class PersonaTDDTest {
 		
 		assertNotNull(a);
 		assertEquals(0, r);
+	}
+	
+	@Test
+	public void testSetNumeroDeReservasUnaReservaPersonaValido() {
+		Persona a = new Persona("1", "a");
+		a.setInColaDeAmigos(true);
+		
+		a.setReservas(1);
+		
+		assertNotNull(a);
+		assertEquals(1, a.getReservas());
 	}
 	
 	@Test
