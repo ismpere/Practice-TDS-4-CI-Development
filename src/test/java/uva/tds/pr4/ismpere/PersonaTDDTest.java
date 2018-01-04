@@ -171,12 +171,13 @@ public class PersonaTDDTest {
 	}
 	
 	@Test
-	public void testSetColadoPersonaValido() {
+	public void testSetColadoTruePersonaValido() {
 		Persona a = new Persona("1", "a");
 		
 		a.setColado(true);
 		
 		assertNotNull(a);
+		assertEquals(true, a.colado());
 	}
 	
 	@Test
@@ -184,7 +185,7 @@ public class PersonaTDDTest {
 		Persona a = new Persona("1", "a");
 		
 		a.setColado(true);
-		boolean c = a.getColado();
+		boolean c = a.colado();
 		
 		assertNotNull(a);
 		assertTrue(c);

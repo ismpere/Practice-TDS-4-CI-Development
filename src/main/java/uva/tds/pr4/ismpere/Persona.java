@@ -139,7 +139,7 @@ public class Persona{
 	 * Devuelve si una Persona ha sido colada por otra Persona o no
 	 * @return colada
 	 */
-	public boolean getColado() {
+	public boolean colado() {
 		// TODO Auto-generated method stub
 		return false;
 	}
