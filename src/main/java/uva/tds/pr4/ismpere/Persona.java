@@ -30,5 +30,21 @@ public class Persona{
 		// TODO Auto-generated method stub
 		return null;
 	}
+	public void addConocido(Persona b) {
+		// TODO Auto-generated method stub
+		
+	}
+	public Persona[] getConocidos() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public void addAmigo(Persona b) {
+		// TODO Auto-generated method stub
+		
+	}
+	public Persona[] getAmigos() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }
