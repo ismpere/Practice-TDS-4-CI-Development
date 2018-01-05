@@ -212,4 +212,8 @@ public class Persona{
 		// TODO Auto-generated method stub
 		return false;
 	}
+	public boolean isInColaDeAmigos(Persona a) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }
