@@ -115,11 +115,12 @@ public class ColaDeAmigosTDDTest {
 		
 		cola.pedirVez(a, 1);
 		
-		cola.getReservas(a);
+		int r = cola.getReservas(a);
 		
 		Persona[] p = {a};
 		
 		assertNotNull(cola);
+		assertEquals(1, r);
 		assertArrayEquals(p, cola.getPersonas());
 	}
 	
@@ -130,11 +131,12 @@ public class ColaDeAmigosTDDTest {
 		
 		cola.pedirVez(a, 1);
 		
-		cola.getReservasRestantes(a);
+		int r = cola.getReservasRestantes(a);
 		
 		Persona[] p = {a};
 		
 		assertNotNull(cola);
+		assertEquals(1, r);
 		assertArrayEquals(p, cola.getPersonas());
 	}
 }

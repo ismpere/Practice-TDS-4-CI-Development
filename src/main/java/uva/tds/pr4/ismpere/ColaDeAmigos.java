@@ -75,5 +75,13 @@ public class ColaDeAmigos{
 		// TODO Auto-generated method stub
 		return false;
 	}
+	public int getReservas(Persona a) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	public int getReservasRestantes(Persona a) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 	
 }
