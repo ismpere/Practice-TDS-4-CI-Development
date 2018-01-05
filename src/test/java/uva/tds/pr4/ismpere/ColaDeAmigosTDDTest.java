@@ -81,6 +81,7 @@ public class ColaDeAmigosTDDTest {
 		
 		assertNotNull(cola);
 		assertArrayEquals(p, cola.getPersonas());
+		assertEquals(0, cola.getReservas(a));
 	}
 	
 	@Test
