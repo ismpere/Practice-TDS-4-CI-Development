@@ -75,11 +75,24 @@ public class ColaDeAmigos{
 		// TODO Auto-generated method stub
 		return false;
 	}
-	public int getReservas(Persona a) {
+	/**
+	 * Devuelve el numero de amigos para el que reservo una Persona
+	 * al entrar en la cola
+	 * @param p Persona
+	 * @return reservas
+	 * @assert.pre isInCola(p)
+	 */
+	public int getReservas(Persona p) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-	public int getReservasRestantes(Persona a) {
+	/**
+	 * Devuelve el numero de reservas que le quedan a una Persona de la cola
+	 * @param p Persona
+	 * @return reservasRestantes
+	 * @assert.pre isInCola(p)
+	 */
+	public int getReservasRestantes(Persona p) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
