@@ -110,6 +110,7 @@ public class ColaDeAmigos{
 	/**
 	 * Devuelve la Persona a la que le toca ser atendida segun el orden de la cola
 	 * @return personaParaAtender
+	 * @assert.pre !isEmpty()
 	 */
 	public Persona getPersonaParaAtender() {
 		// TODO Auto-generated method stub
@@ -117,11 +118,16 @@ public class ColaDeAmigos{
 	}
 	/**
 	 * Atiende a la persona que esta en la primera posicion de la ColaDeAmigos
+	 * @assert.pre !isEmpty()
 	 */
 	public void atender() {
 		// TODO Auto-generated method stub
 		
 	}
+	/**
+	 * Devuelve si la ColaDeAmigos esta vacia
+	 * @return isEmpty
+	 */
 	public boolean isEmpty() {
 		// TODO Auto-generated method stub
 		return false;
