@@ -107,10 +107,17 @@ public class ColaDeAmigos{
 		// TODO Auto-generated method stub
 		return null;
 	}
+	/**
+	 * Devuelve la Persona a la que le toca ser atendida segun el orden de la cola
+	 * @return personaParaAtender
+	 */
 	public Persona getPersonaParaAtender() {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	/**
+	 * Atiende a la persona que esta en la primera posicion de la ColaDeAmigos
+	 */
 	public void atender() {
 		// TODO Auto-generated method stub
 		
