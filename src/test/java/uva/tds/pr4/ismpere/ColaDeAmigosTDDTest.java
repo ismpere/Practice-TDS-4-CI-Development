@@ -100,7 +100,7 @@ public class ColaDeAmigosTDDTest {
 		
 		cola.pedirVez(a, 1);
 		
-		cola.colarse(b);
+		cola.colar(b);
 		
 		Persona[] p = {b,a};
 		
@@ -138,5 +138,31 @@ public class ColaDeAmigosTDDTest {
 		assertNotNull(cola);
 		assertEquals(1, r);
 		assertArrayEquals(p, cola.getPersonas());
+	}
+	
+	@Test
+	public void testGetPersonasColadasColaDeDeAmigosValidoUnaPersonaColada(){
+		Persona a = new Persona("1", "a");
+		Persona b = new Persona("2", "b");
+		a.isConocido(b);
+		b.isConocido(a);
+		a.isAmigo(b);
+		b.isAmigo(a);
+		ColaDeAmigos cola = new ColaDeAmigos();
+		
+		cola.pedirVez(a, 1);
+		
+		cola.colar(b);
+		
+		Persona[] p1 = cola.getPersonasColadasPor(a);
+		
+		Persona[] p2 = {b,a};
+		Persona[] p3 = {b};
+		
+		assertNotNull(cola);
+		assertEquals(1, cola.getReservas(a));
+		assertEquals(0, cola.getReservasRestantes(a));
+		assertArrayEquals(p1, p3);
+		assertArrayEquals(p2, cola.getPersonas());
 	}
 }

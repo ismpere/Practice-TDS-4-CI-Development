@@ -62,7 +62,7 @@ public class ColaDeAmigos{
 	 * @assert.pre !cola.isInCola(p)
 	 * @assert.pre puedeColarse(p)
 	 */
-	public void colarse(Persona p) {
+	public void colar(Persona p) {
 		// TODO Auto-generated method stub
 		
 	}
