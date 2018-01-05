@@ -27,5 +27,17 @@ public class ColaDeAmigos{
 		// TODO Auto-generated method stub
 		return null;
 	}
+	public void pedirVez(Persona a, int i) {
+		// TODO Auto-generated method stub
+		
+	}
+	public boolean puedeColarse(Persona b) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	public void colarse(Persona b) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }
