@@ -187,12 +187,11 @@ public class ColaDeAmigosTDDTest {
 		
 		ColaDeAmigos cola = new ColaDeAmigos(p);
 		
-		Persona p1 = cola.atender();
+		cola.atender();
 		
 		Persona[] p2 = {};
 		
 		assertNotNull(cola);
-		assertEquals(p1, a);
 		assertArrayEquals(p2, cola.getPersonas());
 	}
 }

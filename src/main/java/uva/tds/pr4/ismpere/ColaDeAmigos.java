@@ -107,5 +107,13 @@ public class ColaDeAmigos{
 		// TODO Auto-generated method stub
 		return null;
 	}
+	public Persona getPersonaParaAtender() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public void atender() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }
