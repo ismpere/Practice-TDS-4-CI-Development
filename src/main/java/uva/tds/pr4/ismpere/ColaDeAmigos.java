@@ -96,5 +96,9 @@ public class ColaDeAmigos{
 		// TODO Auto-generated method stub
 		return 0;
 	}
+	public Persona[] getPersonasColadasPor(Persona a) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }
