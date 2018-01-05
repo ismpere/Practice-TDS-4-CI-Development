@@ -27,6 +27,16 @@ public class ColaDeAmigosTDDTest {
 	}
 	
 	@Test
+	public void testIsEmptyColaDeAmigosTrueValido() {
+		ColaDeAmigos cola = new ColaDeAmigos();
+		
+		boolean c = cola.isEmpty();
+		
+		assertNotNull(cola);
+		assertTrue(c);
+	}
+	
+	@Test
 	public void testGetPersonasColaDeAmigosValido() {
 		Persona a = new Persona("1", "a");
 		Persona b = new Persona("2", "b");
