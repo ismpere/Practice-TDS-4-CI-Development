@@ -212,7 +212,12 @@ public class Persona{
 		// TODO Auto-generated method stub
 		return false;
 	}
-	public boolean isInColaDeAmigos(Persona a) {
+	/**
+	 * Devuelve si una persona esta en la ColaDeAmigos
+	 * @param p Persona
+	 * @return isInColaDeAmigos
+	 */
+	public boolean isInColaDeAmigos(Persona p) {
 		// TODO Auto-generated method stub
 		return false;
 	}
