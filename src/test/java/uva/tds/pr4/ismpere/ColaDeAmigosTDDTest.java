@@ -51,7 +51,7 @@ public class ColaDeAmigosTDDTest {
 		
 		ColaDeAmigos cola = new ColaDeAmigos(p);
 		
-		boolean is = a.isInColaDeAmigos(a);
+		boolean is = cola.isInCola(a);
 		
 		assertNotNull(cola);
 		assertTrue(is);

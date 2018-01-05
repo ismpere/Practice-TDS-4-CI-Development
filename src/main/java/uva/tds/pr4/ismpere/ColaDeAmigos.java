@@ -14,6 +14,10 @@ public class ColaDeAmigos{
 	/**
 	 * Cosntructor con argumentos de la clase ColaDeAmigos
 	 * @param p lista de Persona
+	 * @assert.pre p!=null
+	 * @assert.pre No contiene ningun null TODO hacer este metodo en Persona
+	 * @assert.pre p.length>0
+	 * @assert.pre No hay personas repetidas TODO hacer este metodo en Persona
 	 */
 	public ColaDeAmigos(Persona[] p) {
 		// TODO Auto-generated constructor stub
@@ -31,6 +35,10 @@ public class ColaDeAmigos{
 	 * Pide la vez para entrar en la cola de amigos con n reservas de sitio
 	 * @param p Persona a entrar en la ColaDeAmigos
 	 * @param n Numero de sitios que reserva
+	 * @assert.pre p!=null
+	 * @assert.pre !isInCola(p)
+	 * @assert.pre n>0
+	 * @assert.pre n<11
 	 */
 	public void pedirVez(Persona p, int n) {
 		// TODO Auto-generated method stub
@@ -40,18 +48,32 @@ public class ColaDeAmigos{
 	 * Devuelve si una persona puede colarse
 	 * @param p Persona a colarse
 	 * @return puedeColarse
+	 * @assert.pre p!=null
+	 * @assert.pre !isInCola(p)
 	 */
-	public boolean puedeColarse(Persona b) {
+	public boolean puedeColarse(Persona p) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 	/**
 	 * Cuela a una Persona en la ColaDeAmigos
 	 * @param p Persona a colar en la ColaDeAmigos
+	 * @assert.pre p!=null
+	 * @assert.pre !cola.isInCola(p)
+	 * @assert.pre puedeColarse(p)
 	 */
 	public void colarse(Persona p) {
 		// TODO Auto-generated method stub
 		
+	}
+	/**
+	 * Devuelve si una persona esta en la ColaDeAmigos
+	 * @param p Persona
+	 * @return isInCola
+	 */
+	public boolean isInCola(Persona a) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 	
 }
