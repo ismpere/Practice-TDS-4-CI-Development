@@ -165,4 +165,34 @@ public class ColaDeAmigosTDDTest {
 		assertArrayEquals(p1, p3);
 		assertArrayEquals(p2, cola.getPersonas());
 	}
+	
+	@Test
+	public void testGetPersonaAAtenderColaDeAmigosUnaPersonaValido() {
+		Persona a = new Persona("1", "a");
+		Persona[] p = {a};
+		
+		ColaDeAmigos cola = new ColaDeAmigos(p);
+		
+		Persona p1 = cola.getPersonaParaAtender();
+		
+		assertNotNull(cola);
+		assertEquals(p1, a);
+		assertArrayEquals(p, cola.getPersonas());
+	}
+	
+	@Test
+	public void testAtenderPersonaColaDeAmigosUnaPersonaValido() {
+		Persona a = new Persona("1", "a");
+		Persona[] p = {a};
+		
+		ColaDeAmigos cola = new ColaDeAmigos(p);
+		
+		Persona p1 = cola.atender();
+		
+		Persona[] p2 = {};
+		
+		assertNotNull(cola);
+		assertEquals(p1, a);
+		assertArrayEquals(p2, cola.getPersonas());
+	}
 }
