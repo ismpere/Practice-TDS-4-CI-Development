@@ -96,7 +96,14 @@ public class ColaDeAmigos{
 		// TODO Auto-generated method stub
 		return 0;
 	}
-	public Persona[] getPersonasColadasPor(Persona a) {
+	/**
+	 * Devuelve una lista de Persona coladas por p
+	 * La lista estara vacia si p no ha colado a ninguna Persona
+	 * @param p Persona
+	 * @return lista de Personas coladas por p
+	 * @assert.pre isInCola(p)
+	 */
+	public Persona[] getPersonasColadasPor(Persona p) {
 		// TODO Auto-generated method stub
 		return null;
 	}
