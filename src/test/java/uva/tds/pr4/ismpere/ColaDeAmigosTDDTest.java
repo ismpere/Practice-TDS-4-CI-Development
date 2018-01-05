@@ -16,7 +16,7 @@ public class ColaDeAmigosTDDTest {
 	@Test
 	public void testInicializaColaDeAmigosConAmigosValido() {
 		Persona a = new Persona("1", "a");
-		Persona b = new Persona("1", "b");
+		Persona b = new Persona("2", "b");
 		Persona c = new Persona("3", "c");
 		Persona[] p = {a,b,c};
 		
@@ -29,7 +29,7 @@ public class ColaDeAmigosTDDTest {
 	@Test
 	public void testGetPersonasColaDeAmigosValido() {
 		Persona a = new Persona("1", "a");
-		Persona b = new Persona("1", "b");
+		Persona b = new Persona("2", "b");
 		Persona c = new Persona("3", "c");
 		Persona[] p = {a,b,c};
 		
@@ -45,7 +45,7 @@ public class ColaDeAmigosTDDTest {
 	@Test
 	public void testIsInColaDeAmigosTrueValido() {
 		Persona a = new Persona("1", "a");
-		Persona b = new Persona("1", "b");
+		Persona b = new Persona("2", "b");
 		Persona c = new Persona("3", "c");
 		Persona[] p = {a,b,c};
 		
@@ -73,7 +73,7 @@ public class ColaDeAmigosTDDTest {
 	@Test
 	public void testPuedeColarseColaDeAmigosValido(){
 		Persona a = new Persona("1", "a");
-		Persona b = new Persona("1", "b");
+		Persona b = new Persona("2", "b");
 		a.isConocido(b);
 		b.isConocido(a);
 		a.isAmigo(b);
@@ -91,7 +91,7 @@ public class ColaDeAmigosTDDTest {
 	@Test
 	public void testColarseColaDeAmigosValido(){
 		Persona a = new Persona("1", "a");
-		Persona b = new Persona("1", "b");
+		Persona b = new Persona("2", "b");
 		a.isConocido(b);
 		b.isConocido(a);
 		a.isAmigo(b);
@@ -103,6 +103,36 @@ public class ColaDeAmigosTDDTest {
 		cola.colarse(b);
 		
 		Persona[] p = {b,a};
+		
+		assertNotNull(cola);
+		assertArrayEquals(p, cola.getPersonas());
+	}
+	
+	@Test
+	public void testGetReservasColaDeDeAmigosValido(){
+		Persona a = new Persona("1", "a");
+		ColaDeAmigos cola = new ColaDeAmigos();
+		
+		cola.pedirVez(a, 1);
+		
+		cola.getReservas(a);
+		
+		Persona[] p = {a};
+		
+		assertNotNull(cola);
+		assertArrayEquals(p, cola.getPersonas());
+	}
+	
+	@Test
+	public void testGetReservasRestantesColaDeDeAmigosValido(){
+		Persona a = new Persona("1", "a");
+		ColaDeAmigos cola = new ColaDeAmigos();
+		
+		cola.pedirVez(a, 1);
+		
+		cola.getReservasRestantes(a);
+		
+		Persona[] p = {a};
 		
 		assertNotNull(cola);
 		assertArrayEquals(p, cola.getPersonas());
