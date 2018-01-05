@@ -10,7 +10,10 @@ public class ColaDeAmigosTDDTest {
 	public void testInicializaColaDeAmigosSinNadieValido() {
 		ColaDeAmigos cola = new ColaDeAmigos();
 		
+		Persona[] p = {};
+		
 		assertNotNull(cola);
+		assertArrayEquals(p, cola.getPersonas());
 	}
 	
 	@Test
@@ -177,7 +180,7 @@ public class ColaDeAmigosTDDTest {
 	}
 	
 	@Test
-	public void testGetPersonaAAtenderColaDeAmigosUnaPersonaValido() {
+	public void testGetPersonaParaAtenderColaDeAmigosUnaPersonaValido() {
 		Persona a = new Persona("1", "a");
 		Persona[] p = {a};
 		
