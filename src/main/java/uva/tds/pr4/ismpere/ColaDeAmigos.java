@@ -27,15 +27,29 @@ public class ColaDeAmigos{
 		// TODO Auto-generated method stub
 		return null;
 	}
-	public void pedirVez(Persona a, int i) {
+	/**
+	 * Pide la vez para entrar en la cola de amigos con n reservas de sitio
+	 * @param p Persona a entrar en la ColaDeAmigos
+	 * @param n Numero de sitios que reserva
+	 */
+	public void pedirVez(Persona p, int n) {
 		// TODO Auto-generated method stub
 		
 	}
+	/**
+	 * Devuelve si una persona puede colarse
+	 * @param p Persona a colarse
+	 * @return puedeColarse
+	 */
 	public boolean puedeColarse(Persona b) {
 		// TODO Auto-generated method stub
 		return false;
 	}
-	public void colarse(Persona b) {
+	/**
+	 * Cuela a una Persona en la ColaDeAmigos
+	 * @param p Persona a colar en la ColaDeAmigos
+	 */
+	public void colarse(Persona p) {
 		// TODO Auto-generated method stub
 		
 	}
