@@ -122,5 +122,9 @@ public class ColaDeAmigos{
 		// TODO Auto-generated method stub
 		
 	}
+	public boolean isEmpty() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 	
 }
