@@ -49,7 +49,6 @@ public class ColaDeAmigos{
 	 * @param p Persona a colarse
 	 * @return puedeColarse
 	 * @assert.pre p!=null
-	 * @assert.pre !isInCola(p)
 	 */
 	public boolean puedeColarse(Persona p) {
 		// TODO Auto-generated method stub
@@ -70,8 +69,9 @@ public class ColaDeAmigos{
 	 * Devuelve si una persona esta en la ColaDeAmigos
 	 * @param p Persona
 	 * @return isInCola
+	 * @assert.pre p!=null
 	 */
-	public boolean isInCola(Persona a) {
+	public boolean isInCola(Persona p) {
 		// TODO Auto-generated method stub
 		return false;
 	}
