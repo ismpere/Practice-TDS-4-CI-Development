@@ -310,6 +310,19 @@ public class ColaDeAmigosBlackBoxTest {
 		assertArrayEquals(p, cola.getPersonas());
 	}
 	
+	@Test
+	public void testGetPersonasColadasColaDeDeAmigosNingunaPersonaValido(){
+		Persona a = new Persona("1", "a");
+		ColaDeAmigos cola = new ColaDeAmigos();
+		
+		cola.pedirVez(a, 1);
+		
+		Persona[] p = cola.getPersonasColadasPor(a);
+		
+		assertNotNull(cola);
+		assertEquals(0, p.length);
+	}
+	
 	@Test (expected = AssertionError.class)
 	public void testInicializaColaDeAmigosConAmigosNoValidoPersonasNulo() {	
 		ColaDeAmigos cola = new ColaDeAmigos(null);
@@ -429,5 +442,20 @@ public class ColaDeAmigosBlackBoxTest {
 		ColaDeAmigos cola = new ColaDeAmigos();
 		
 		cola.getReservasRestantes(a);
+	}
+	
+	@Test (expected = AssertionError.class)
+	public void testGetPersonasColadasColaDeDeAmigosPersonaNuloNoValido(){
+		ColaDeAmigos cola = new ColaDeAmigos();
+		
+		cola.getPersonasColadasPor(null);
+	}
+	
+	@Test (expected = AssertionError.class)
+	public void testGetPersonasColadasColaDeDeAmigosNotInColaNoValido(){
+		Persona a = new Persona("1", "a");
+		ColaDeAmigos cola = new ColaDeAmigos();
+		
+		cola.getPersonasColadasPor(a);
 	}
 }

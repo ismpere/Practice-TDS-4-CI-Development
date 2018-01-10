@@ -103,6 +103,7 @@ public class ColaDeAmigos{
 	 * La lista estara vacia si p no ha colado a ninguna Persona
 	 * @param p Persona
 	 * @return lista de Personas coladas por p
+	 * @assert.pre p!=null
 	 * @assert.pre isInCola(p)
 	 */
 	public Persona[] getPersonasColadasPor(Persona p) {
