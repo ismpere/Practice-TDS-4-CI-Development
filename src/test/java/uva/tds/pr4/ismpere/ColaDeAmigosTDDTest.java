@@ -174,6 +174,7 @@ public class ColaDeAmigosTDDTest {
 		Persona[] p3 = {b};
 		
 		assertNotNull(cola);
+		assertNotNull(p1);
 		assertEquals(1, cola.getReservas(a));
 		assertEquals(0, cola.getReservasRestantes(a));
 		assertArrayEquals(p1, p3);
@@ -190,6 +191,7 @@ public class ColaDeAmigosTDDTest {
 		Persona p1 = cola.getPersonaParaAtender();
 		
 		assertNotNull(cola);
+		assertNotNull(p1);
 		assertEquals(p1, a);
 		assertArrayEquals(p, cola.getPersonas());
 	}

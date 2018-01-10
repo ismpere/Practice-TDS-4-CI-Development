@@ -28,6 +28,8 @@ public class ColaDeAmigosBlackBoxTest {
 		
 		assertNotNull(cola);
 		assertFalse(c);
+		
+		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
 	
 	@Test
@@ -50,6 +52,8 @@ public class ColaDeAmigosBlackBoxTest {
 		
 		assertNotNull(cola);
 		assertFalse(is);
+		
+		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
 	
 	@Test
@@ -65,6 +69,8 @@ public class ColaDeAmigosBlackBoxTest {
 		
 		assertNotNull(cola);
 		assertFalse(is);
+		
+		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
 	
 	@Test
@@ -104,6 +110,8 @@ public class ColaDeAmigosBlackBoxTest {
 		
 		assertNotNull(cola);
 		assertFalse(c1);
+		
+		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
 	
 	@Test
@@ -129,6 +137,8 @@ public class ColaDeAmigosBlackBoxTest {
 		
 		assertNotNull(cola);
 		assertFalse(c1);
+		
+		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
 	
 	@Test
@@ -141,6 +151,8 @@ public class ColaDeAmigosBlackBoxTest {
 		
 		assertNotNull(cola);
 		assertFalse(c1);
+		
+		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
 	
 	@Test
@@ -320,6 +332,7 @@ public class ColaDeAmigosBlackBoxTest {
 		Persona[] p = cola.getPersonasColadasPor(a);
 		
 		assertNotNull(cola);
+		assertNotNull(p);
 		assertEquals(0, p.length);
 	}
 	
@@ -368,6 +381,8 @@ public class ColaDeAmigosBlackBoxTest {
 		Persona[] p = {b};
 		
 		assertNotNull(cola);
+		assertNotNull(p1);
+		assertNotNull(p2);
 		assertEquals(b, p1);
 		assertEquals(a, p2);
 		assertArrayEquals(p, cola.getPersonas());
@@ -401,8 +416,8 @@ public class ColaDeAmigosBlackBoxTest {
 		ColaDeAmigos cola = new ColaDeAmigos(p);
 	}
 	
-	@Test
-	public void testIsInColaDeAmigosPersonaNuloValido() {
+	@Test (expected = AssertionError.class)
+	public void testIsInColaDeAmigosPersonaNuloNoValido() {
 		ColaDeAmigos cola = new ColaDeAmigos();
 		
 		cola.isInCola(null);
@@ -450,14 +465,14 @@ public class ColaDeAmigosBlackBoxTest {
 	}
 	
 	@Test (expected = AssertionError.class)
-	public void testColarseColaDeAmigosPersonaNuloValido(){
+	public void testColarseColaDeAmigosPersonaNuloNoValido(){
 		ColaDeAmigos cola = new ColaDeAmigos();
 		
 		cola.colar(null);
 	}
 	
 	@Test (expected = AssertionError.class)
-	public void testColarseColaDeAmigosSinPersonasValido(){
+	public void testColarseColaDeAmigosSinPersonasNoValido(){
 		Persona a = new Persona("a", "a");
 		ColaDeAmigos cola = new ColaDeAmigos();
 		
