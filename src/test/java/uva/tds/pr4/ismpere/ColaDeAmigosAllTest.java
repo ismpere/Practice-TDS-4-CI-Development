@@ -6,13 +6,13 @@ import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
 @SuiteClasses({ 
-    PersonaAllTest.class,
-    ColaDeAmigosAllTest.class})
+	ColaDeAmigosTDDTest.class,
+	ColaDeAmigosBlackBoxTest.class})
 
 /**
- * Suite de test de todas las clases
+ * Suite de test de la clase ColaDeAmigos
  * @author ismpere
  */
-public class AllTest {
+public class ColaDeAmigosAllTest {
 
 }
