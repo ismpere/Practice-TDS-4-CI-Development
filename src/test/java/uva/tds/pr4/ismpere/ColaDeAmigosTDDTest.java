@@ -203,9 +203,7 @@ public class ColaDeAmigosTDDTest {
 		
 		cola.atender();
 		
-		Persona[] p2 = {};
-		
 		assertNotNull(cola);
-		assertArrayEquals(p2, cola.getPersonas());
+		assertTrue(cola.isEmpty());
 	}
 }

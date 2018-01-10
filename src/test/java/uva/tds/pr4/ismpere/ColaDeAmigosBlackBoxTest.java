@@ -323,6 +323,56 @@ public class ColaDeAmigosBlackBoxTest {
 		assertEquals(0, p.length);
 	}
 	
+	@Test
+	public void testAtenderColaDeAmigosVariosAmigosValido(){
+		Persona a = new Persona("1", "a");
+		Persona b = new Persona("2", "b");
+		a.isConocido(b);
+		b.isConocido(a);
+		a.isAmigo(b);
+		b.isAmigo(a);
+
+		ColaDeAmigos cola = new ColaDeAmigos();
+		
+		cola.pedirVez(a, 1);
+		
+		cola.colar(b);
+		
+		cola.atender();
+		cola.atender();
+		
+		assertNotNull(cola);
+		assertTrue(cola.isEmpty());
+	}
+	
+	@Test
+	public void testGetPersonaParaAtenderColaDeAmigosVariosAmigosValido(){
+		Persona a = new Persona("1", "a");
+		Persona b = new Persona("2", "b");
+		a.isConocido(b);
+		b.isConocido(a);
+		a.isAmigo(b);
+		b.isAmigo(a);
+
+		ColaDeAmigos cola = new ColaDeAmigos();
+		
+		cola.pedirVez(a, 1);
+		
+		cola.colar(b);
+		
+		Persona p1 = cola.getPersonaParaAtender();
+		cola.atender();
+		
+		Persona p2 = cola.getPersonaParaAtender();
+		
+		Persona[] p = {b};
+		
+		assertNotNull(cola);
+		assertEquals(b, p1);
+		assertEquals(a, p2);
+		assertArrayEquals(p, cola.getPersonas());
+	}
+	
 	@Test (expected = AssertionError.class)
 	public void testInicializaColaDeAmigosConAmigosNoValidoPersonasNulo() {	
 		ColaDeAmigos cola = new ColaDeAmigos(null);
@@ -457,5 +507,19 @@ public class ColaDeAmigosBlackBoxTest {
 		ColaDeAmigos cola = new ColaDeAmigos();
 		
 		cola.getPersonasColadasPor(a);
+	}
+	
+	@Test (expected = AssertionError.class)
+	public void testgetPersonaParaAtenderColaDeDeAmigosIsEmptyNoValido(){
+		ColaDeAmigos cola = new ColaDeAmigos();
+		
+		cola.getPersonaParaAtender();
+	}
+	
+	@Test (expected = AssertionError.class)
+	public void testAtenderColaDeDeAmigosIsEmptyNoValido(){
+		ColaDeAmigos cola = new ColaDeAmigos();
+		
+		cola.atender();
 	}
 }
