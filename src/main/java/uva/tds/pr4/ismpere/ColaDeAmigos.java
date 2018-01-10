@@ -49,7 +49,6 @@ public class ColaDeAmigos{
 	 * @param p Persona a colarse
 	 * @return puedeColarse
 	 * @assert.pre p!=null
-	 * @assert.pre !isInCola(p)
 	 */
 	public boolean puedeColarse(Persona p) {
 		// TODO Auto-generated method stub
@@ -70,8 +69,9 @@ public class ColaDeAmigos{
 	 * Devuelve si una persona esta en la ColaDeAmigos
 	 * @param p Persona
 	 * @return isInCola
+	 * @assert.pre p!=null
 	 */
-	public boolean isInCola(Persona a) {
+	public boolean isInCola(Persona p) {
 		// TODO Auto-generated method stub
 		return false;
 	}
@@ -80,6 +80,7 @@ public class ColaDeAmigos{
 	 * al entrar en la cola
 	 * @param p Persona
 	 * @return reservas
+	 * @assert.pre p!=null
 	 * @assert.pre isInCola(p)
 	 */
 	public int getReservas(Persona p) {
@@ -90,6 +91,7 @@ public class ColaDeAmigos{
 	 * Devuelve el numero de reservas que le quedan a una Persona de la cola
 	 * @param p Persona
 	 * @return reservasRestantes
+	 * @assert.pre p!=null
 	 * @assert.pre isInCola(p)
 	 */
 	public int getReservasRestantes(Persona p) {
@@ -101,6 +103,7 @@ public class ColaDeAmigos{
 	 * La lista estara vacia si p no ha colado a ninguna Persona
 	 * @param p Persona
 	 * @return lista de Personas coladas por p
+	 * @assert.pre p!=null
 	 * @assert.pre isInCola(p)
 	 */
 	public Persona[] getPersonasColadasPor(Persona p) {

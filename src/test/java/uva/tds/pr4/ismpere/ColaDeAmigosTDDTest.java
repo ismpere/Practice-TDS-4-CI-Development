@@ -81,6 +81,7 @@ public class ColaDeAmigosTDDTest {
 		
 		assertNotNull(cola);
 		assertArrayEquals(p, cola.getPersonas());
+		assertEquals(0, cola.getReservas(a));
 	}
 	
 	@Test
@@ -122,7 +123,7 @@ public class ColaDeAmigosTDDTest {
 	}
 	
 	@Test
-	public void testGetReservasColaDeDeAmigosValido(){
+	public void testGetReservasColaDeDeAmigosUnaReservaValido(){
 		Persona a = new Persona("1", "a");
 		ColaDeAmigos cola = new ColaDeAmigos();
 		
@@ -173,6 +174,7 @@ public class ColaDeAmigosTDDTest {
 		Persona[] p3 = {b};
 		
 		assertNotNull(cola);
+		assertNotNull(p1);
 		assertEquals(1, cola.getReservas(a));
 		assertEquals(0, cola.getReservasRestantes(a));
 		assertArrayEquals(p1, p3);
@@ -189,6 +191,7 @@ public class ColaDeAmigosTDDTest {
 		Persona p1 = cola.getPersonaParaAtender();
 		
 		assertNotNull(cola);
+		assertNotNull(p1);
 		assertEquals(p1, a);
 		assertArrayEquals(p, cola.getPersonas());
 	}
@@ -202,9 +205,7 @@ public class ColaDeAmigosTDDTest {
 		
 		cola.atender();
 		
-		Persona[] p2 = {};
-		
 		assertNotNull(cola);
-		assertArrayEquals(p2, cola.getPersonas());
+		assertTrue(cola.isEmpty());
 	}
 }
