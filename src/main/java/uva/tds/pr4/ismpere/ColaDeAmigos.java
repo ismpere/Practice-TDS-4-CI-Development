@@ -80,6 +80,7 @@ public class ColaDeAmigos{
 	 * al entrar en la cola
 	 * @param p Persona
 	 * @return reservas
+	 * @assert.pre p!=null
 	 * @assert.pre isInCola(p)
 	 */
 	public int getReservas(Persona p) {
@@ -90,6 +91,7 @@ public class ColaDeAmigos{
 	 * Devuelve el numero de reservas que le quedan a una Persona de la cola
 	 * @param p Persona
 	 * @return reservasRestantes
+	 * @assert.pre p!=null
 	 * @assert.pre isInCola(p)
 	 */
 	public int getReservasRestantes(Persona p) {

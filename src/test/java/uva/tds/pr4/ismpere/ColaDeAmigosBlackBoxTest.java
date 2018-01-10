@@ -170,6 +170,146 @@ public class ColaDeAmigosBlackBoxTest {
 		assertArrayEquals(p, cola.getPersonas());
 	}
 	
+	@Test
+	public void testGetReservasColaDeDeAmigosSinReservasValido(){
+		Persona a = new Persona("1", "a");
+		ColaDeAmigos cola = new ColaDeAmigos();
+		
+		cola.pedirVez(a, 0);
+		
+		int r = cola.getReservas(a);
+		
+		Persona[] p = {a};
+		
+		assertNotNull(cola);
+		assertEquals(0, r);
+		assertArrayEquals(p, cola.getPersonas());
+	}
+	
+	@Test
+	public void testGetReservasColaDeDeAmigos10ReservasValido(){
+		Persona a = new Persona("1", "a");
+		ColaDeAmigos cola = new ColaDeAmigos();
+		
+		cola.pedirVez(a, 10);
+		
+		int r = cola.getReservas(a);
+		
+		Persona[] p = {a};
+		
+		assertNotNull(cola);
+		assertEquals(10, r);
+		assertArrayEquals(p, cola.getPersonas());
+	}
+	
+	@Test
+	public void testGetReservasColaDeDeAmigosUnaPersonaColadaValido(){
+		Persona a = new Persona("1", "a");
+		Persona b = new Persona("2", "b");
+		a.isConocido(b);
+		b.isConocido(a);
+		a.isAmigo(b);
+		b.isAmigo(a);
+		ColaDeAmigos cola = new ColaDeAmigos();
+		
+		cola.pedirVez(a, 1);
+		
+		cola.colar(b);
+		
+		int r = cola.getReservas(a);
+		
+		Persona[] p = {b,a};
+		
+		assertNotNull(cola);
+		assertEquals(1, r);
+		assertArrayEquals(p, cola.getPersonas());
+	}
+	
+	@Test
+	public void testGetReservasColaDeDeAmigosPersonaColadaValido(){
+		Persona a = new Persona("1", "a");
+		Persona b = new Persona("2", "b");
+		a.isConocido(b);
+		b.isConocido(a);
+		a.isAmigo(b);
+		b.isAmigo(a);
+		ColaDeAmigos cola = new ColaDeAmigos();
+		
+		cola.pedirVez(a, 1);
+		
+		cola.colar(b);
+		
+		int r = cola.getReservas(b);
+		
+		Persona[] p = {b,a};
+		
+		assertNotNull(cola);
+		assertEquals(0, r);
+		assertArrayEquals(p, cola.getPersonas());
+	}
+	
+	@Test
+	public void testGetReservasRestantesColaDeDeAmigosSinReservasValido(){
+		Persona a = new Persona("1", "a");
+		ColaDeAmigos cola = new ColaDeAmigos();
+		
+		cola.pedirVez(a, 0);
+		
+		int r = cola.getReservasRestantes(a);
+		
+		Persona[] p = {a};
+		
+		assertNotNull(cola);
+		assertEquals(0, r);
+		assertArrayEquals(p, cola.getPersonas());
+	}
+	
+	@Test
+	public void testGetReservasRestantesColaDeDeAmigosPersonaColadaValido(){
+		Persona a = new Persona("1", "a");
+		Persona b = new Persona("2", "b");
+		a.isConocido(b);
+		b.isConocido(a);
+		a.isAmigo(b);
+		b.isAmigo(a);
+		ColaDeAmigos cola = new ColaDeAmigos();
+		
+		cola.pedirVez(a, 1);
+		
+		cola.colar(b);
+		
+		int r = cola.getReservas(b);
+		
+		Persona[] p = {b,a};
+		
+		assertNotNull(cola);
+		assertEquals(0, r);
+		assertArrayEquals(p, cola.getPersonas());
+	}
+	
+	@Test
+	public void testGetReservasRestantesColaDeDeAmigosUnaPersonaColadaValido(){
+		Persona a = new Persona("1", "a");
+		Persona b = new Persona("2", "b");
+		a.isConocido(b);
+		b.isConocido(a);
+		a.isAmigo(b);
+		b.isAmigo(a);
+		ColaDeAmigos cola = new ColaDeAmigos();
+		
+		cola.pedirVez(a, 1);
+		
+		cola.colar(b);
+		
+		int r = cola.getReservas(a);
+		
+		Persona[] p = {b,a};
+		
+		assertNotNull(cola);
+		assertEquals(0, r);
+		assertArrayEquals(p, cola.getPersonas());
+	}
+	
 	@Test (expected = AssertionError.class)
 	public void testInicializaColaDeAmigosConAmigosNoValidoPersonasNulo() {	
 		ColaDeAmigos cola = new ColaDeAmigos(null);
@@ -259,5 +399,35 @@ public class ColaDeAmigosBlackBoxTest {
 		ColaDeAmigos cola = new ColaDeAmigos();
 		
 		cola.colar(a);
+	}
+	
+	@Test (expected = AssertionError.class)
+	public void testGetReservasColaDeDeAmigosPersonaNuloNoValido(){
+		ColaDeAmigos cola = new ColaDeAmigos();
+		
+		cola.getReservas(null);
+	}
+	
+	@Test (expected = AssertionError.class)
+	public void testGetReservasColaDeDeAmigosNotInColaNoValido(){
+		Persona a = new Persona("1", "a");
+		ColaDeAmigos cola = new ColaDeAmigos();
+		
+		cola.getReservas(a);
+	}
+	
+	@Test (expected = AssertionError.class)
+	public void testGetReservasRestantesColaDeDeAmigosPersonaNuloNoValido(){
+		ColaDeAmigos cola = new ColaDeAmigos();
+		
+		cola.getReservasRestantes(null);
+	}
+	
+	@Test (expected = AssertionError.class)
+	public void testGetReservasRestantesColaDeDeAmigosNotInColaNoValido(){
+		Persona a = new Persona("1", "a");
+		ColaDeAmigos cola = new ColaDeAmigos();
+		
+		cola.getReservasRestantes(a);
 	}
 }

@@ -123,7 +123,7 @@ public class ColaDeAmigosTDDTest {
 	}
 	
 	@Test
-	public void testGetReservasColaDeDeAmigosValido(){
+	public void testGetReservasColaDeDeAmigosUnaReservaValido(){
 		Persona a = new Persona("1", "a");
 		ColaDeAmigos cola = new ColaDeAmigos();
 		
