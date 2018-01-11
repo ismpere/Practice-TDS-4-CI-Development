@@ -94,10 +94,10 @@ public class ColaDeAmigosTDDTest {
 	public void testPuedeColarseColaDeAmigosValido(){
 		Persona a = new Persona("1", "a");
 		Persona b = new Persona("2", "b");
-		a.isConocido(b);
-		b.isConocido(a);
-		a.isAmigo(b);
-		b.isAmigo(a);
+		a.addConocido(b);
+		b.addConocido(a);
+		a.addAmigo(b);
+		b.addAmigo(a);
 		ColaDeAmigos cola = new ColaDeAmigos();
 		
 		cola.pedirVez(a, 1);
@@ -112,10 +112,10 @@ public class ColaDeAmigosTDDTest {
 	public void testColarseColaDeAmigosValido(){
 		Persona a = new Persona("1", "a");
 		Persona b = new Persona("2", "b");
-		a.isConocido(b);
-		b.isConocido(a);
-		a.isAmigo(b);
-		b.isAmigo(a);
+		a.addConocido(b);
+		b.addConocido(a);
+		a.addAmigo(b);
+		b.addAmigo(a);
 		ColaDeAmigos cola = new ColaDeAmigos();
 		
 		cola.pedirVez(a, 1);
@@ -164,10 +164,10 @@ public class ColaDeAmigosTDDTest {
 	public void testGetPersonasColadasColaDeDeAmigosValidoUnaPersonaColada(){
 		Persona a = new Persona("1", "a");
 		Persona b = new Persona("2", "b");
-		a.isConocido(b);
-		b.isConocido(a);
-		a.isAmigo(b);
-		b.isAmigo(a);
+		a.addConocido(b);
+		b.addConocido(a);
+		a.addAmigo(b);
+		b.addAmigo(a);
 		ColaDeAmigos cola = new ColaDeAmigos();
 		
 		cola.pedirVez(a, 1);

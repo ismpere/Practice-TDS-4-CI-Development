@@ -232,7 +232,7 @@ public class Persona{
 	public void setReservas(int reservas) {
 		assert(isInColaDeAmigos());
 		assert(!colado());
-		assert(reservas>0);
+		assert(reservas>=0);
 		assert(reservas<11);
 		
 		this.reservas = reservas;
