@@ -81,7 +81,7 @@ public class ColaDeAmigosConAmigosYColadosTest {
 	public void testGetPersonasColadasPorAValido() {
 		Persona[] p1 = cola.getPersonasColadasPor(a);
 		
-		Persona[] p2 = {b,d};
+		Persona[] p2 = {d,b};
 				
 		assertNotNull(p1);
 		assertArrayEquals(p2, p1);
