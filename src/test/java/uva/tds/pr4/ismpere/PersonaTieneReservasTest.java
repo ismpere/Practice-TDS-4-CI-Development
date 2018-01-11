@@ -19,7 +19,7 @@ public class PersonaTieneReservasTest {
 	@Before
 	public void setUp(){
 		a = new Persona("1", "a");
-		b = new Persona("1", "b");
+		b = new Persona("2", "b");
 		c = new Persona("3", "c");
 		
 		a.addConocido(b);
