@@ -339,6 +339,26 @@ public class ColaDeAmigosBlackBoxTest {
 	}
 	
 	@Test
+	public void testGetPersonasColadasColaDeDeAmigosPersonaColadaValido(){
+		Persona a = new Persona("1", "a");
+		Persona b = new Persona("2", "b");
+		a.isConocido(b);
+		b.isConocido(a);
+		a.isAmigo(b);
+		b.isAmigo(a);
+		ColaDeAmigos cola = new ColaDeAmigos();
+		
+		cola.pedirVez(a, 1);
+		
+		cola.colar(b);
+		
+		Persona[] p = cola.getPersonasColadasPor(b);
+		
+		assertNotNull(cola);
+		assertEquals(0, p.length);
+	}
+	
+	@Test
 	public void testAtenderColaDeAmigosVariosAmigosValido(){
 		Persona a = new Persona("1", "a");
 		Persona b = new Persona("2", "b");

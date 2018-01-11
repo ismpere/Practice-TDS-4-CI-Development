@@ -5,7 +5,9 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
+@Category({Unit.class})
 public class ColaDeAmigosConAmigosYColadosTest {
 	
 	private Persona a,b,c,d,e;
@@ -83,12 +85,10 @@ public class ColaDeAmigosConAmigosYColadosTest {
 	
 	@Test
 	public void testGetPersonasColadasPorBColadoValido() {
-		Persona[] p1 = cola.getPersonasColadasPor(b);
-		
-		Persona[] p2 = {};
+		Persona[] p = cola.getPersonasColadasPor(b);
 				
-		assertNotNull(p1);
-		assertArrayEquals(p2, p1);
+		assertNotNull(p);
+		assertEquals(0, p.length);
 	}
 	
 	@Test
