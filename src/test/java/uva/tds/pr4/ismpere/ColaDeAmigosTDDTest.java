@@ -214,4 +214,17 @@ public class ColaDeAmigosTDDTest {
 		assertNotNull(cola);
 		assertTrue(cola.isEmpty());
 	}
+	
+	@Test
+	public void testGetPosicionPersonaValido() {
+		Persona a = new Persona("1", "a");
+		Persona[] p = {a};
+		
+		ColaDeAmigos cola = new ColaDeAmigos(p);
+		
+		int pos = cola.getPosicion(a);
+		
+		assertNotNull(a);
+		assertEquals(1, pos);
+	}
 }
