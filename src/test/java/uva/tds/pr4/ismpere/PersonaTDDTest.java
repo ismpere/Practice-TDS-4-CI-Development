@@ -289,7 +289,7 @@ public class PersonaTDDTest {
 		Persona a = new Persona("1", "a");
 		Persona[] p = {a,a};
 		
-		boolean t = Persona.existsPersonasRepetidas(p);
+		boolean t = Persona.hayPersonasRepetidas(p);
 		
 		assertNotNull(a);
 		assertTrue(t);
