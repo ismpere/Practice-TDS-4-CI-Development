@@ -185,7 +185,14 @@ public class ColaDeAmigos{
 	public boolean isEmpty() {
 		return personas.isEmpty();
 	}
-	public int getPosicion(Persona a) {
+	/**
+	 * Devuelve la posicion en la que esta una Persona en la ColaDeAmigos 
+	 * @param p Persona
+	 * @return posicion
+	 * @assert.pre p!=null
+	 * @assert.pre isInCola(p)
+	 */
+	public int getPosicion(Persona p) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
