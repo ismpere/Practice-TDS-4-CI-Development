@@ -5,7 +5,9 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
+@Category({Unit.class})
 public class ColaDeAmigosConAmigosYColadosTest {
 	
 	private Persona a,b,c,d,e;
