@@ -155,6 +155,7 @@ public class PersonaBlackBoxTest {
 	@Test
 	public void testSetColadoFalsePersonaValido(){
 		Persona a = new Persona("1", "a");
+		a.setInColaDeAmigos(true);
 		
 		a.setColado(false);
 		
