@@ -31,6 +31,9 @@ public class ColaDeAmigos{
 		assert(personas.length>0);
 		assert(!Persona.hayPersonasRepetidas(personas));
 		
+		for(Persona p: personas)
+			p.setInColaDeAmigos(true);
+		
 		this.personas = new ArrayList<>(Arrays.asList(personas));
 	}
 	/**

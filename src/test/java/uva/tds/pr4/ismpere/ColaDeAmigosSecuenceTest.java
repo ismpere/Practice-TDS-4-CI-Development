@@ -122,6 +122,6 @@ public class ColaDeAmigosSecuenceTest {
 		assertFalse(c1);
 		assertEquals(c, p1);
 		assertEquals(b, p2);
-		assertEquals(1, r1);
+		assertEquals(0, r1);
 	}
 }
