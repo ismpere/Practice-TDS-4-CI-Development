@@ -197,8 +197,6 @@ public class PersonaTDDTest {
 		
 		assertNotNull(a);
 		assertTrue(i);
-		
-		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
 	
 	@Test
@@ -233,8 +231,6 @@ public class PersonaTDDTest {
 		
 		assertNotNull(a);
 		assertEquals(0, r);
-		
-		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
 	
 	@Test
@@ -258,8 +254,6 @@ public class PersonaTDDTest {
 		a.addPersonaColada();
 		
 		assertNotNull(a);
-		
-		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
 	
 	@Test
@@ -271,8 +265,6 @@ public class PersonaTDDTest {
 		
 		assertNotNull(a);
 		assertEquals(0, r);
-		
-		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
 	
 	@Test
@@ -284,8 +276,6 @@ public class PersonaTDDTest {
 		
 		assertNotNull(a);
 		assertFalse(t);
-		
-		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
 	
 	@Test
