@@ -185,5 +185,9 @@ public class ColaDeAmigos{
 	public boolean isEmpty() {
 		return personas.isEmpty();
 	}
+	public int getPosicion(Persona a) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 	
 }
