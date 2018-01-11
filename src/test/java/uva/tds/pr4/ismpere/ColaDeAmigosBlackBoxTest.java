@@ -168,9 +168,9 @@ public class ColaDeAmigosBlackBoxTest {
 		cola.pedirVez(a, 1);
 		cola.pedirVez(b, 1);
 		
-		cola.colar(b);
+		cola.colar(c);
 		
-		Persona[] p = {c,a,b};
+		Persona[] p = {a,c,b};
 		
 		assertNotNull(cola);
 		assertArrayEquals(p, cola.getPersonas());
@@ -307,7 +307,7 @@ public class ColaDeAmigosBlackBoxTest {
 		
 		cola.colar(b);
 		
-		int r = cola.getReservas(a);
+		int r = cola.getReservasRestantes(a);
 		
 		Persona[] p = {b,a};
 		
@@ -393,7 +393,7 @@ public class ColaDeAmigosBlackBoxTest {
 		
 		Persona p2 = cola.getPersonaParaAtender();
 		
-		Persona[] p = {b};
+		Persona[] p = {a};
 		
 		assertNotNull(cola);
 		assertNotNull(p1);

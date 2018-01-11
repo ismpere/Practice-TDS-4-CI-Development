@@ -101,6 +101,8 @@ public class ColaDeAmigos{
 		for(int i=0; i<personas.size(); i++){
 			Persona pa = personas.get(i);
 			if(pa.tieneReservas() && p.isAmigo(pa) && pa.isAmigo(p)){
+				p.setInColaDeAmigos(true);
+				p.setColado(true);
 				personas.add(i, p);
 				pa.addPersonaColada();
 				break;
@@ -194,6 +196,9 @@ public class ColaDeAmigos{
 	 */
 	public void atender() {
 		assert(!isEmpty());
+		
+		Persona p = personas.get(0);
+		p.setInColaDeAmigos(false);
 		
 		personas.remove(0);
 	}

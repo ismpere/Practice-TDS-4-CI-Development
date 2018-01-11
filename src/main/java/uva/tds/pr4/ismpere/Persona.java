@@ -213,6 +213,12 @@ public class Persona{
 	 */
 	public void setInColaDeAmigos(boolean inCola) {
 		this.inCola = inCola;
+		
+		if(!inCola){
+			reservas=0;
+			reservasUsadas=0;
+			colado=false;	
+		}
 	}
 	/**
 	 * Devuelve si una Persona esta en una ColaDeAmigos
@@ -350,6 +356,6 @@ public class Persona{
 	 * @see
 	 */
     public int hashCode() {
-        return Objects.hash(id,amigos);
+        return Objects.hash(id,nombre);
     }
 }
