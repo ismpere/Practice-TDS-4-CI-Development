@@ -187,6 +187,44 @@ public class PersonaBlackBoxTest {
 	}
 	
 	@Test
+	public void testGetNumeroDeReservasPersonaColadaPersonaValido() {
+		Persona a = new Persona("1", "a");
+		a.setInColaDeAmigos(true);
+		a.setColado(true);
+		
+		int r = a.getReservas();
+		
+		assertNotNull(a);
+		assertEquals(0, r);
+	}
+	
+	@Test
+	public void testGetNumeroDeReservasRestantesUnaPersonaColadaValido() {
+		Persona a = new Persona("1", "a");
+		a.setInColaDeAmigos(true);
+		a.setReservas(1);
+		
+		a.addPersonaColada();
+		
+		int r = a.getReservasRestantes();
+		
+		assertNotNull(a);
+		assertEquals(0, r);
+	}
+	
+	@Test
+	public void testGetNumeroDeReservasRestantesPersonaColadaValido() {
+		Persona a = new Persona("1", "a");
+		a.setInColaDeAmigos(true);
+		a.setColado(true);
+		
+		int r = a.getReservasRestantes();
+		
+		assertNotNull(a);
+		assertEquals(0, r);
+	}
+	
+	@Test
 	public void testHayPersonasNuloAlgunaNuloTrueValido() {
 		Persona a = new Persona("1", "a");
 		Persona[] p = {a,null};
@@ -414,6 +452,17 @@ public class PersonaBlackBoxTest {
 	}
 	
 	@Test(expected = AssertionError.class)
+	public void testAddConocidoPersonaAmigaNoValido() {
+		Persona a = new Persona("1", "a");
+		Persona b = new Persona("2", "b");
+		
+		a.addConocido(b);
+		a.addAmigo(b);
+		
+		a.addConocido(b);
+	}
+	
+	@Test(expected = AssertionError.class)
 	public void testAddConocidoPersonaThisNoValido() {
 		Persona a = new Persona("1", "a");
 		
@@ -531,6 +580,31 @@ public class PersonaBlackBoxTest {
 	}
 	
 	@Test(expected = AssertionError.class)
+	public void testSetReservasColadoAmigosNoValido() {
+		Persona a = new Persona("1", "a");
+		a.setInColaDeAmigos(true);
+		a.setColado(true);
+		
+		a.setReservas(1);
+	}
+	
+	@Test(expected = AssertionError.class)
+	public void testSetReservasNegativoAmigosNoValido() {
+		Persona a = new Persona("1", "a");
+		a.setInColaDeAmigos(true);
+		
+		a.setReservas(-1);
+	}
+	
+	@Test(expected = AssertionError.class)
+	public void testSetReservasGrandeAmigosNoValido() {
+		Persona a = new Persona("1", "a");
+		a.setInColaDeAmigos(true);
+		
+		a.setReservas(11);
+	}
+	
+	@Test(expected = AssertionError.class)
 	public void testGetReservasNotInColaDeAmigosNoValido() {
 		Persona a = new Persona("1", "a");
 		
@@ -542,20 +616,6 @@ public class PersonaBlackBoxTest {
 		Persona a = new Persona("1", "a");
 		
 		a.addPersonaColada();
-	}
-	
-	@Test(expected = AssertionError.class)
-	public void testGetReservasRestantesNotInColaDeAmigosNoValido() {
-		Persona a = new Persona("1", "a");
-		
-		a.getReservasRestantes();
-	}
-	
-	@Test(expected = AssertionError.class)
-	public void testTieneReservasNotInColaDeAmigosNoValido() {
-		Persona a = new Persona("1", "a");
-		
-		a.tieneReservas();
 	}
 	
 	@Test(expected = AssertionError.class)
@@ -587,6 +647,25 @@ public class PersonaBlackBoxTest {
 		a.addPersonaColada();
 	}
 	
+	@Test(expected = AssertionError.class)
+	public void testGetReservasRestantesNotInColaDeAmigosNoValido() {
+		Persona a = new Persona("1", "a");
+		
+		a.getReservasRestantes();
+	}
+	
+	@Test(expected = AssertionError.class)
+	public void testTieneReservasNotInColaDeAmigosNoValido() {
+		Persona a = new Persona("1", "a");
+		
+		a.tieneReservas();
+	}
+	
+	@Test (expected = AssertionError.class)
+	public void testHayPersonasNuloListaNuloNoValido() {
+		Persona.hayPersonasNulo(null);
+	}
+	
 	@Test (expected = AssertionError.class)
 	public void testHayPersonasRepetidasListaNuloNoValido() {		
 		Persona.hayPersonasRepetidas(null);
@@ -597,11 +676,6 @@ public class PersonaBlackBoxTest {
 		Persona[] p = {null};
 		
 		Persona.hayPersonasRepetidas(p);
-	}
-	
-	@Test (expected = AssertionError.class)
-	public void testHayPersonasNuloListaNuloNoValido() {
-		Persona.hayPersonasNulo(null);
 	}
 	
 	@Test (expected = AssertionError.class)
