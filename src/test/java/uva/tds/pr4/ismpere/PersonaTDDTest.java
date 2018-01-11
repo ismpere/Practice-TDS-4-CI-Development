@@ -285,6 +285,15 @@ public class PersonaTDDTest {
 	}
 	
 	@Test
+	public void testHayPersonasNuloUnaNuloTrueValido() {
+		Persona[] p = {null};
+		
+		boolean t = Persona.hayPersonasNulo(p);
+		
+		assertTrue(t);
+	}
+	
+	@Test
 	public void testHayPersonasRepetidasDosIgualesTrueValido() {
 		Persona a = new Persona("1", "a");
 		Persona[] p = {a,a};
