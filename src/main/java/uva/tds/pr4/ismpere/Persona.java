@@ -227,8 +227,18 @@ public class Persona{
 	 * @param p lista de Persona
 	 * @return hayRepetidas
 	 * @assert.pre p!=null
+	 * @assert.pre !hayPersonasNulo(p)
 	 */
 	public static boolean hayPersonasRepetidas(Persona[] p) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	/**
+	 * Devuelve si hay alguna Persona nulo en una lista de Persona
+	 * @param p lista de Personas
+	 * @return hayPersonasNulo
+	 */
+	public static boolean hayPersonasNulo(Persona[] p) {
 		// TODO Auto-generated method stub
 		return false;
 	}
