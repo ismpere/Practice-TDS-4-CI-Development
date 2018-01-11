@@ -62,8 +62,6 @@ public class PersonaBlackBoxTest {
 		assertNotNull(a);
 		assertNotNull(b);
 		assertFalse(c);
-		
-		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
 	
 	@Test
@@ -99,8 +97,6 @@ public class PersonaBlackBoxTest {
 		assertNotNull(a);
 		assertNotNull(b);
 		assertFalse(c);
-		
-		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
 	
 	@Test
@@ -113,8 +109,6 @@ public class PersonaBlackBoxTest {
 		assertNotNull(a);
 		assertNotNull(b);
 		assertFalse(c);
-		
-		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
 	
 	@Test
@@ -146,8 +140,6 @@ public class PersonaBlackBoxTest {
 		
 		assertNotNull(a);
 		assertFalse(i);
-		
-		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
 	
 	@Test
@@ -158,20 +150,17 @@ public class PersonaBlackBoxTest {
 		
 		assertNotNull(a);
 		assertFalse(a.isInColaDeAmigos());
-		
-		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
 	
 	@Test
 	public void testSetColadoFalsePersonaValido(){
 		Persona a = new Persona("1", "a");
+		a.setInColaDeAmigos(true);
 		
 		a.setColado(false);
 		
 		assertNotNull(a);
 		assertFalse(a.colado());
-		
-		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
 	
 	@Test
@@ -215,8 +204,6 @@ public class PersonaBlackBoxTest {
 		boolean t = Persona.hayPersonasNulo(p);
 		
 		assertFalse(t);
-		
-		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
 	
 	@Test
@@ -227,8 +214,6 @@ public class PersonaBlackBoxTest {
 		boolean t = Persona.hayPersonasNulo(p);
 		
 		assertFalse(t);
-		
-		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
 	
 	@Test
@@ -237,8 +222,6 @@ public class PersonaBlackBoxTest {
 		boolean t = Persona.hayPersonasRepetidas(p);
 		
 		assertFalse(t);
-		
-		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
 	
 	@Test
@@ -248,8 +231,6 @@ public class PersonaBlackBoxTest {
 		boolean t = Persona.hayPersonasRepetidas(p);
 		
 		assertFalse(t);
-		
-		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
 	
 	@Test
@@ -262,9 +243,72 @@ public class PersonaBlackBoxTest {
 		
 		assertNotNull(a);
 		assertFalse(t);
-		
-		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
+	
+	@Test
+    public void testEqualsPersonaTrueIdIgualValido(){
+		Persona a = new Persona("1", "a");
+		Persona b = new Persona("1", "b");
+		
+		boolean eq = a.equals(b);
+    	
+    	assertNotNull(a);
+    	assertNotNull(b);
+    	assertTrue(eq);
+    }
+	
+	@Test
+    public void testEqualsPersonaFalseIdDiferenteValido(){
+		Persona a = new Persona("1", "a");
+		Persona b = new Persona("2", "b");
+		
+		boolean eq = a.equals(b);
+    	
+    	assertNotNull(a);
+    	assertNotNull(b);
+    	assertFalse(eq);
+    }
+    
+    @Test
+    public void testEqualsPersonaThisTrueValido(){
+    	Persona a = new Persona("1", "a");
+		
+		boolean eq = a.equals(a);
+    	
+    	assertNotNull(a);
+    	assertTrue(eq);
+    }
+    
+    @Test
+    public void testEqualsPersonaNuloFalseValido(){
+    	Persona a = new Persona("1", "a");
+    	
+    	boolean eq = a.equals(null);
+    	
+    	assertNotNull(a);
+    	assertFalse(eq);
+    }
+    
+    @Test
+    public void testEqualsPersonaNoEsUnaPersonaFalseValido(){
+    	Persona a = new Persona("1", "a");
+    	
+    	String s = "";
+    	
+    	boolean eq = a.equals(s);
+    	
+    	assertNotNull(a);
+    	assertFalse(eq);
+    }
+    
+    @Test
+    public void testHashCodeValido(){
+    	Persona a = new Persona("1", "a");
+    	
+    	int h1 = a.hashCode();
+    	
+    	assertNotNull(h1);
+    }
 
 	@Test(expected = AssertionError.class)
 	public void testInicializaPersonaIdNuloNoValido() {
