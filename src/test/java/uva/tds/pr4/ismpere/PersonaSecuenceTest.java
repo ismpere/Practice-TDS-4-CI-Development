@@ -8,6 +8,10 @@ import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
 @Category({Unit.class, Secuence.class})
+/**
+ * Clase de test de secuencia de la clase Persona
+ * @author ismpere
+ */
 public class PersonaSecuenceTest {
 
 private Persona a, b, c;

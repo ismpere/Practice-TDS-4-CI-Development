@@ -6,6 +6,10 @@ import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
 @Category({Unit.class})
+/**
+ * Clase de test TDD de la clase ColaDeAmigos
+ * @author ismpere
+ */
 public class ColaDeAmigosTDDTest {
 
 	@Test
