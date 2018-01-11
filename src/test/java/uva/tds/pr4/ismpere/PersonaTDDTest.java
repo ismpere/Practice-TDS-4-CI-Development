@@ -283,4 +283,24 @@ public class PersonaTDDTest {
 		
 		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
+	
+	@Test
+	public void testHayPersonasNuloUnaNuloTrueValido() {
+		Persona[] p = {null};
+		
+		boolean t = Persona.hayPersonasNulo(p);
+		
+		assertTrue(t);
+	}
+	
+	@Test
+	public void testHayPersonasRepetidasDosIgualesTrueValido() {
+		Persona a = new Persona("1", "a");
+		Persona[] p = {a,a};
+		
+		boolean t = Persona.hayPersonasRepetidas(p);
+		
+		assertNotNull(a);
+		assertTrue(t);
+	}
 }
