@@ -8,6 +8,10 @@ import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
 @Category({Unit.class})
+/**
+ * Fixture de test de la clase Persona
+ * @author ismpere
+ */
 public class PersonaTieneReservasTest {
 	
 	private Persona a, b, c;
