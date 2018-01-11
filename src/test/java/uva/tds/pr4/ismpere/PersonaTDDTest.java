@@ -285,7 +285,7 @@ public class PersonaTDDTest {
 	}
 	
 	@Test
-	public void testPersonasRepetidasDosIgualesTrueValido() {
+	public void testHayPersonasRepetidasDosIgualesTrueValido() {
 		Persona a = new Persona("1", "a");
 		Persona[] p = {a,a};
 		
