@@ -192,6 +192,75 @@ public class PersonaBlackBoxTest {
 		assertNotNull(a);
 		assertEquals(1, r);
 	}
+	
+	@Test
+	public void testHayPersonasNuloAlgunaNuloTrueValido() {
+		Persona a = new Persona("1", "a");
+		Persona[] p = {a,null};
+		
+		boolean t = Persona.hayPersonasNulo(p);
+		
+		assertTrue(t);
+	}
+	
+	@Test
+	public void testNoHayPersonasNuloTrueValido() {
+		Persona a = new Persona("1", "a");
+		Persona[] p = {a};
+		
+		boolean t = Persona.hayPersonasNulo(p);
+		
+		assertFalse(t);
+		
+		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
+	}
+	
+	@Test
+	public void testNoHayPersonasNuloListaVaciaTrueValido() {
+		Persona a = new Persona("1", "a");
+		Persona[] p = {};
+		
+		boolean t = Persona.hayPersonasNulo(p);
+		
+		assertFalse(t);
+		
+		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
+	}
+	
+	@Test
+	public void testHayPersonasRepetidasListaVaciaFalseValido() {
+		Persona[] p = {};
+		boolean t = Persona.hayPersonasRepetidas(p);
+		
+		assertFalse(t);
+		
+		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
+	}
+	
+	@Test
+	public void testHayPersonasRepetidasUnaPersonaFalseValido() {
+		Persona a = new Persona("1", "a");
+		Persona[] p = {a};
+		boolean t = Persona.hayPersonasRepetidas(p);
+		
+		assertFalse(t);
+		
+		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
+	}
+	
+	@Test
+	public void testHayPersonasRepetidasSinRepetidasFalseValido() {
+		Persona a = new Persona("1", "a");
+		Persona b = new Persona("2", "b");
+		Persona[] p = {a,b};
+		
+		boolean t = Persona.hayPersonasRepetidas(p);
+		
+		assertNotNull(a);
+		assertFalse(t);
+		
+		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
+	}
 
 	@Test(expected = AssertionError.class)
 	public void testInicializaPersonaIdNuloNoValido() {
@@ -468,5 +537,30 @@ public class PersonaBlackBoxTest {
 		a.setColado(true);
 		
 		a.addPersonaColada();
+	}
+	
+	@Test (expected = AssertionError.class)
+	public void testHayPersonasRepetidasListaNuloNoValido() {		
+		Persona.hayPersonasRepetidas(null);
+	}
+	
+	@Test (expected = AssertionError.class)
+	public void testHayPersonasRepetidasElementoNuloNoValido() {
+		Persona[] p = {null};
+		
+		Persona.hayPersonasRepetidas(p);
+	}
+	
+	@Test (expected = AssertionError.class)
+	public void testHayPersonasNuloListaNuloNoValido() {
+		Persona.hayPersonasNulo(null);
+	}
+	
+	@Test (expected = AssertionError.class)
+	public void testHayPersonasRepetidasAlgunElementoNuloNoValido() {
+		Persona a = new Persona("1", "a");
+		Persona[] p = {a,null};
+		
+		Persona.hayPersonasRepetidas(p);
 	}
 }

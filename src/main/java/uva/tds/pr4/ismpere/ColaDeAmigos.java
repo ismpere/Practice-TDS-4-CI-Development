@@ -15,9 +15,9 @@ public class ColaDeAmigos{
 	 * Cosntructor con argumentos de la clase ColaDeAmigos
 	 * @param p lista de Persona
 	 * @assert.pre p!=null
-	 * @assert.pre No contiene ningun null TODO hacer este metodo en Persona
+	 * @assert.pre !Persona.hayPersonasNulo(p)
 	 * @assert.pre p.length>0
-	 * @assert.pre No hay personas repetidas TODO hacer este metodo en Persona
+	 * @assert.pre !Persona.hayPersonasRepetidas(p)
 	 */
 	public ColaDeAmigos(Persona[] p) {
 		// TODO Auto-generated constructor stub
