@@ -193,8 +193,20 @@ public class ColaDeAmigos{
 	 * @assert.pre isInCola(p)
 	 */
 	public int getPosicion(Persona p) {
-		// TODO Auto-generated method stub
-		return 0;
+		assert(p!=null);
+		assert(isInCola(p));
+		
+		int pos = 0;
+		
+		for(int i=0; i<personas.size(); i++){
+			Persona pAux = personas.get(i);
+			if(p.equals(pAux)){
+				pos = i;
+				break;
+			}
+		}
+		
+		return pos+1;
 	}
 	
 }
