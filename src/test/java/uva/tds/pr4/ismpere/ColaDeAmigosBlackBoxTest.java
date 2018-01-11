@@ -34,8 +34,6 @@ public class ColaDeAmigosBlackBoxTest {
 		
 		assertNotNull(cola);
 		assertFalse(c);
-		
-		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
 	
 	@Test
@@ -58,8 +56,6 @@ public class ColaDeAmigosBlackBoxTest {
 		
 		assertNotNull(cola);
 		assertFalse(is);
-		
-		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
 	
 	@Test
@@ -75,8 +71,6 @@ public class ColaDeAmigosBlackBoxTest {
 		
 		assertNotNull(cola);
 		assertFalse(is);
-		
-		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
 	
 	@Test
@@ -116,8 +110,6 @@ public class ColaDeAmigosBlackBoxTest {
 		
 		assertNotNull(cola);
 		assertFalse(c1);
-		
-		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
 	
 	@Test
@@ -125,15 +117,15 @@ public class ColaDeAmigosBlackBoxTest {
 		Persona a = new Persona("1", "a");
 		Persona b = new Persona("2", "b");
 		Persona c = new Persona("3", "c");
-		a.isConocido(b);
-		b.isConocido(a);
-		a.isAmigo(b);
-		b.isAmigo(a);
+		a.addConocido(b);
+		b.addConocido(a);
+		a.addAmigo(b);
+		b.addAmigo(a);
 		
-		c.isConocido(a);
-		a.isConocido(c);
-		c.isAmigo(a);
-		a.isAmigo(c);
+		a.addConocido(c);
+		c.addConocido(a);
+		a.addAmigo(c);
+		c.addAmigo(a);
 		ColaDeAmigos cola = new ColaDeAmigos();
 		
 		cola.pedirVez(a, 1);
@@ -143,8 +135,6 @@ public class ColaDeAmigosBlackBoxTest {
 		
 		assertNotNull(cola);
 		assertFalse(c1);
-		
-		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
 	
 	@Test
@@ -157,8 +147,6 @@ public class ColaDeAmigosBlackBoxTest {
 		
 		assertNotNull(cola);
 		assertFalse(c1);
-		
-		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
 	
 	@Test
@@ -166,23 +154,23 @@ public class ColaDeAmigosBlackBoxTest {
 		Persona a = new Persona("1", "a");
 		Persona b = new Persona("2", "b");
 		Persona c = new Persona("3", "c");
-		a.isConocido(b);
-		b.isConocido(a);
-		a.isAmigo(b);
-		b.isAmigo(a);
+		a.addConocido(b);
+		b.addConocido(a);
+		a.addAmigo(b);
+		b.addAmigo(a);
 		
-		c.isConocido(b);
-		b.isConocido(c);
-		c.isAmigo(b);
-		b.isAmigo(c);
+		c.addConocido(b);
+		b.addConocido(c);
+		c.addAmigo(b);
+		b.addAmigo(c);
 		ColaDeAmigos cola = new ColaDeAmigos();
 		
 		cola.pedirVez(a, 1);
 		cola.pedirVez(b, 1);
 		
-		cola.colar(b);
+		cola.colar(c);
 		
-		Persona[] p = {c,a,b};
+		Persona[] p = {a,c,b};
 		
 		assertNotNull(cola);
 		assertArrayEquals(p, cola.getPersonas());
@@ -224,10 +212,10 @@ public class ColaDeAmigosBlackBoxTest {
 	public void testGetReservasColaDeDeAmigosUnaPersonaColadaValido(){
 		Persona a = new Persona("1", "a");
 		Persona b = new Persona("2", "b");
-		a.isConocido(b);
-		b.isConocido(a);
-		a.isAmigo(b);
-		b.isAmigo(a);
+		a.addConocido(b);
+		b.addConocido(a);
+		a.addAmigo(b);
+		b.addAmigo(a);
 		ColaDeAmigos cola = new ColaDeAmigos();
 		
 		cola.pedirVez(a, 1);
@@ -247,10 +235,10 @@ public class ColaDeAmigosBlackBoxTest {
 	public void testGetReservasColaDeDeAmigosPersonaColadaValido(){
 		Persona a = new Persona("1", "a");
 		Persona b = new Persona("2", "b");
-		a.isConocido(b);
-		b.isConocido(a);
-		a.isAmigo(b);
-		b.isAmigo(a);
+		a.addConocido(b);
+		b.addConocido(a);
+		a.addAmigo(b);
+		b.addAmigo(a);
 		ColaDeAmigos cola = new ColaDeAmigos();
 		
 		cola.pedirVez(a, 1);
@@ -286,10 +274,10 @@ public class ColaDeAmigosBlackBoxTest {
 	public void testGetReservasRestantesColaDeDeAmigosPersonaColadaValido(){
 		Persona a = new Persona("1", "a");
 		Persona b = new Persona("2", "b");
-		a.isConocido(b);
-		b.isConocido(a);
-		a.isAmigo(b);
-		b.isAmigo(a);
+		a.addConocido(b);
+		b.addConocido(a);
+		a.addAmigo(b);
+		b.addAmigo(a);
 		ColaDeAmigos cola = new ColaDeAmigos();
 		
 		cola.pedirVez(a, 1);
@@ -309,17 +297,17 @@ public class ColaDeAmigosBlackBoxTest {
 	public void testGetReservasRestantesColaDeDeAmigosUnaPersonaColadaValido(){
 		Persona a = new Persona("1", "a");
 		Persona b = new Persona("2", "b");
-		a.isConocido(b);
-		b.isConocido(a);
-		a.isAmigo(b);
-		b.isAmigo(a);
+		a.addConocido(b);
+		b.addConocido(a);
+		a.addAmigo(b);
+		b.addAmigo(a);
 		ColaDeAmigos cola = new ColaDeAmigos();
 		
 		cola.pedirVez(a, 1);
 		
 		cola.colar(b);
 		
-		int r = cola.getReservas(a);
+		int r = cola.getReservasRestantes(a);
 		
 		Persona[] p = {b,a};
 		
@@ -346,10 +334,10 @@ public class ColaDeAmigosBlackBoxTest {
 	public void testGetPersonasColadasColaDeDeAmigosPersonaColadaValido(){
 		Persona a = new Persona("1", "a");
 		Persona b = new Persona("2", "b");
-		a.isConocido(b);
-		b.isConocido(a);
-		a.isAmigo(b);
-		b.isAmigo(a);
+		a.addConocido(b);
+		b.addConocido(a);
+		a.addAmigo(b);
+		b.addAmigo(a);
 		ColaDeAmigos cola = new ColaDeAmigos();
 		
 		cola.pedirVez(a, 1);
@@ -367,10 +355,10 @@ public class ColaDeAmigosBlackBoxTest {
 	public void testAtenderColaDeAmigosVariosAmigosValido(){
 		Persona a = new Persona("1", "a");
 		Persona b = new Persona("2", "b");
-		a.isConocido(b);
-		b.isConocido(a);
-		a.isAmigo(b);
-		b.isAmigo(a);
+		a.addConocido(b);
+		b.addConocido(a);
+		a.addAmigo(b);
+		b.addAmigo(a);
 
 		ColaDeAmigos cola = new ColaDeAmigos();
 		
@@ -389,10 +377,10 @@ public class ColaDeAmigosBlackBoxTest {
 	public void testGetPersonaParaAtenderColaDeAmigosVariosAmigosValido(){
 		Persona a = new Persona("1", "a");
 		Persona b = new Persona("2", "b");
-		a.isConocido(b);
-		b.isConocido(a);
-		a.isAmigo(b);
-		b.isAmigo(a);
+		a.addConocido(b);
+		b.addConocido(a);
+		a.addAmigo(b);
+		b.addAmigo(a);
 
 		ColaDeAmigos cola = new ColaDeAmigos();
 		
@@ -405,7 +393,7 @@ public class ColaDeAmigosBlackBoxTest {
 		
 		Persona p2 = cola.getPersonaParaAtender();
 		
-		Persona[] p = {b};
+		Persona[] p = {a};
 		
 		assertNotNull(cola);
 		assertNotNull(p1);
