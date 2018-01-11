@@ -2,6 +2,9 @@ package uva.tds.pr4.ismpere;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Objects;
+
+import uva.tds.pr2.equipo05.Linea;
 
 /**
  * Implementacion de la clase Persona
@@ -322,4 +325,27 @@ public class Persona{
 		
 		return Arrays.asList(p).contains(null);
 	}
+	
+	@Override
+	/**
+	 * @see 
+	 */
+	public boolean equals(Object other){
+	    if (other == null) 
+	    	return false;
+	    if (other == this) 
+	    	return true;
+	    if (!(other instanceof Persona))
+	    	return false;
+	    
+	    return getId().equals(((Persona)other).getId());
+	}
+	
+	@Override
+	/**
+	 * @see
+	 */
+    public int hashCode() {
+        return Objects.hash(id,amigos);
+    }
 }
