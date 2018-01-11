@@ -221,4 +221,8 @@ public class Persona{
 		// TODO Auto-generated method stub
 		return false;
 	}
+	public static boolean existsPersonasRepetidas(Persona[] p) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }
