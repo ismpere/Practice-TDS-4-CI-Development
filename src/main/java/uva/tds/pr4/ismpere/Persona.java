@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Objects;
 
-import uva.tds.pr2.equipo05.Linea;
-
 /**
  * Implementacion de la clase Persona
  * @author ismpere
