@@ -355,6 +355,7 @@ public class ColaDeAmigosBlackBoxTest {
 		Persona[] p = cola.getPersonasColadasPor(b);
 		
 		assertNotNull(cola);
+		assertNotNull(p);
 		assertEquals(0, p.length);
 	}
 	
