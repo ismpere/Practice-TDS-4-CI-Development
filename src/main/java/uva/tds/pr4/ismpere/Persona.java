@@ -107,10 +107,14 @@ public class Persona{
 	 * Esta lista estara vacia si no tiene ningun conocido
 	 * @return conocidos
 	 */
-	public Persona[] getConocidos() {	
-		Persona[] c = new Persona[conocidos.size()];
+	public Persona[] getConocidos() {
+		ArrayList<Persona> aux = new ArrayList<>(amigos.size()+conocidos.size());
+		aux.addAll(amigos);
+		aux.addAll(conocidos);
 		
-		return conocidos.toArray(c);
+		Persona[] c = new Persona[amigos.size()+conocidos.size()];
+		
+		return aux.toArray(c);
 	}
 	/**
 	 * Aniade un amigo de la Persona
@@ -124,6 +128,7 @@ public class Persona{
 		assert(isConocido(p));
 		assert(!isAmigo(p));
 		
+		conocidos.remove(p);
 		amigos.add(p);
 	}
 	/**
@@ -272,7 +277,7 @@ public class Persona{
 	public boolean tieneReservas() {
 		assert(isInColaDeAmigos());
 		
-		return getReservasRestantes()==0;
+		return getReservasRestantes()!=0;
 	}
 	/**
 	 * Devuelve si hay alguna Persona repetida en una lista de Personas
