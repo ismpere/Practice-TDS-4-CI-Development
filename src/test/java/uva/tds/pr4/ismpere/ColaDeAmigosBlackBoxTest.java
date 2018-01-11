@@ -34,8 +34,6 @@ public class ColaDeAmigosBlackBoxTest {
 		
 		assertNotNull(cola);
 		assertFalse(c);
-		
-		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
 	
 	@Test
@@ -58,8 +56,6 @@ public class ColaDeAmigosBlackBoxTest {
 		
 		assertNotNull(cola);
 		assertFalse(is);
-		
-		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
 	
 	@Test
@@ -75,8 +71,6 @@ public class ColaDeAmigosBlackBoxTest {
 		
 		assertNotNull(cola);
 		assertFalse(is);
-		
-		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
 	
 	@Test
@@ -116,8 +110,6 @@ public class ColaDeAmigosBlackBoxTest {
 		
 		assertNotNull(cola);
 		assertFalse(c1);
-		
-		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
 	
 	@Test
@@ -143,8 +135,6 @@ public class ColaDeAmigosBlackBoxTest {
 		
 		assertNotNull(cola);
 		assertFalse(c1);
-		
-		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
 	
 	@Test
@@ -157,8 +147,6 @@ public class ColaDeAmigosBlackBoxTest {
 		
 		assertNotNull(cola);
 		assertFalse(c1);
-		
-		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
 	
 	@Test
