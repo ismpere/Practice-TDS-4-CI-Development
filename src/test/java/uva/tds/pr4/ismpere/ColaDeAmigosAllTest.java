@@ -8,7 +8,8 @@ import org.junit.runners.Suite.SuiteClasses;
 @SuiteClasses({ 
 	ColaDeAmigosTDDTest.class,
 	ColaDeAmigosBlackBoxTest.class,
-	ColaDeAmigosSecuenceTest.class})
+	ColaDeAmigosSecuenceTest.class,
+	ColaDeAmigosConAmigosYColadosTest.class})
 
 /**
  * Suite de test de la clase ColaDeAmigos
