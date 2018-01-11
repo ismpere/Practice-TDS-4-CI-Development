@@ -156,8 +156,26 @@ public class ColaDeAmigos{
 	 * @assert.pre isInCola(p)
 	 */
 	public Persona[] getPersonasColadasPor(Persona p) {
-		// TODO Auto-generated method stub
-		return null;
+		assert(p!=null);
+		assert(isInCola(p));
+		
+		ArrayList<Persona> coladas = new ArrayList<>();
+		
+		Persona[] c = {};
+		if(p.colado() || personas.size()==1){
+			return c;
+		}
+		
+		int posIni = getPosicion(p)-2;
+		int r = getReservas(p)-getReservasRestantes(p);
+		
+		for(int i=posIni; i>=0 && r>0; i--, r--){
+			coladas.add(personas.get(i));
+		}
+		
+		c = new Persona[coladas.size()];
+		
+		return coladas.toArray(c);
 	}
 	/**
 	 * Devuelve la Persona a la que le toca ser atendida segun el orden de la cola
