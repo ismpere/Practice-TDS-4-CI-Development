@@ -235,8 +235,10 @@ public class Persona{
 	}
 	/**
 	 * Devuelve si hay alguna Persona nulo en una lista de Persona
+	 * Si la lista esta vacia devolvera false
 	 * @param p lista de Personas
 	 * @return hayPersonasNulo
+	 * @assert.pre p!=null
 	 */
 	public static boolean hayPersonasNulo(Persona[] p) {
 		// TODO Auto-generated method stub
