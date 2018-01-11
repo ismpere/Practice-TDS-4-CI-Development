@@ -54,8 +54,8 @@ public class ColaDeAmigos{
 	 */
 	public void pedirVez(Persona p, int n) {
 		assert(p!=null);
-		assert(isInCola(p));
-		assert(n>0);
+		assert(!isInCola(p));
+		assert(n>=0);
 		assert(n<11);
 		
 		p.setInColaDeAmigos(true);
@@ -70,7 +70,6 @@ public class ColaDeAmigos{
 	 */
 	public boolean puedeColarse(Persona p) {
 		assert(p!=null);
-		
 		if(isInCola(p) || isEmpty())
 			return false;
 		
@@ -103,6 +102,8 @@ public class ColaDeAmigos{
 			Persona pa = personas.get(i);
 			if(pa.tieneReservas() && p.isAmigo(pa) && pa.isAmigo(p)){
 				personas.add(i, p);
+				pa.addPersonaColada();
+				break;
 			}
 		}
 	}
