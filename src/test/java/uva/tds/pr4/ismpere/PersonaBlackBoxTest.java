@@ -211,6 +211,8 @@ public class PersonaBlackBoxTest {
 		boolean t = Persona.hayPersonasNulo(p);
 		
 		assertFalse(t);
+		
+		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
 	
 	@Test
@@ -221,6 +223,8 @@ public class PersonaBlackBoxTest {
 		boolean t = Persona.hayPersonasNulo(p);
 		
 		assertFalse(t);
+		
+		fail("Hago que el test falle ya que su fake implementacion hace que pase en verde");
 	}
 	
 	@Test
@@ -547,7 +551,7 @@ public class PersonaBlackBoxTest {
 		Persona.hayPersonasRepetidas(p);
 	}
 	
-	@Test
+	@Test (expected = AssertionError.class)
 	public void testHayPersonasNuloListaNuloNoValido() {
 		Persona.hayPersonasNulo(null);
 	}
