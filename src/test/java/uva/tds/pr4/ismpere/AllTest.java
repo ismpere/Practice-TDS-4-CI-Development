@@ -6,7 +6,8 @@ import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
 @SuiteClasses({ 
-    PersonaAllTest.class})
+    PersonaAllTest.class,
+    ColaDeAmigosAllTest.class})
 
 /**
  * Suite de test de todas las clases

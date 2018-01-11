@@ -4,7 +4,7 @@
 	<groupId>uva.tds.ismpere.pr4</groupId>
 	<artifactId>ismpere-p4</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Practica 3 de TDS</name>
+	<name>Practica 4 de TDS</name>
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
@@ -29,31 +29,34 @@
 		<profile>
 			<id>Unit</id>
 			<properties>
-				<testcase.groups>uva.tds.pr2.equipo05.Unit</testcase.groups>
+				<testcase.groups>uva.tds.pr4.ismpere.Unit</testcase.groups>
 			</properties>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
 		</profile>
 		<profile>
 			<id>TDD</id>
 			<properties>
-				<testcase.groups>uva.tds.pr2.equipo05.TDD</testcase.groups>
+				<testcase.groups>uva.tds.pr4.ismpere.TDD</testcase.groups>
 			</properties>
 		</profile>
 		<profile>
 			<id>Isolation</id>
 			<properties>
-				<testcase.groups>uva.tds.pr2.equipo05.Isolation</testcase.groups>
+				<testcase.groups>uva.tds.pr4.ismpere.Isolation</testcase.groups>
 			</properties>
 		</profile>
 		<profile>
 			<id>Integration</id>
 			<properties>
-				<testcase.groups>uva.tds.pr2.equipo05.Integration</testcase.groups>
+				<testcase.groups>uva.tds.pr4.ismpere.Integration</testcase.groups>
 			</properties>
 		</profile>
 		<profile>
 			<id>Secuence</id>
 			<properties>
-				<testcase.groups>uva.tds.pr2.equipo05.Secuence</testcase.groups>
+				<testcase.groups>uva.tds.pr4.ismpere.Secuence</testcase.groups>
 			</properties>
 		</profile>
 	</profiles>
