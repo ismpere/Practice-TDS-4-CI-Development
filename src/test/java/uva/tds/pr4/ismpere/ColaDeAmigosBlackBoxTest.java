@@ -524,6 +524,14 @@ public class ColaDeAmigosBlackBoxTest {
 	}
 	
 	@Test (expected = AssertionError.class)
+	public void testInicializaColaDeAmigosConListaVaciaNoValido() {
+		Persona a = new Persona("1", "a");
+		Persona[] p = {};
+		
+		ColaDeAmigos cola = new ColaDeAmigos(p);
+	}
+	
+	@Test (expected = AssertionError.class)
 	public void testIsInColaDeAmigosPersonaNuloNoValido() {
 		ColaDeAmigos cola = new ColaDeAmigos();
 		
@@ -580,8 +588,17 @@ public class ColaDeAmigosBlackBoxTest {
 	
 	@Test (expected = AssertionError.class)
 	public void testColarseColaDeAmigosSinPersonasNoValido(){
-		Persona a = new Persona("a", "a");
+		Persona a = new Persona("1", "a");
 		ColaDeAmigos cola = new ColaDeAmigos();
+		
+		cola.colar(a);
+	}
+	
+	@Test (expected = AssertionError.class)
+	public void testColarseColaDeAmigosInInColaNoValido(){
+		Persona a = new Persona("1", "a");
+		Persona[] p = {a};
+		ColaDeAmigos cola = new ColaDeAmigos(p);
 		
 		cola.colar(a);
 	}
