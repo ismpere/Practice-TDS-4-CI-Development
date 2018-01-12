@@ -7,7 +7,7 @@ import org.junit.experimental.categories.Category;
 
 @Category({Unit.class})
 /**
- * Clase de test de caja negra de la clase ColaDeAmigos
+ * Clase de test de caja negra unitarios de la clase ColaDeAmigos
  * @author ismpere
  */
 public class ColaDeAmigosBlackBoxUnitTest {
@@ -60,6 +60,17 @@ public class ColaDeAmigosBlackBoxUnitTest {
 		
 		assertNotNull(cola);
 		assertFalse(is);
+	}
+	
+	@Test
+	public void testPuedeColarseFalseColaDeAmigosVaciaValido(){
+		Persona b = new Persona("2", "b");
+		ColaDeAmigos cola = new ColaDeAmigos();
+		
+		boolean c1 = cola.puedeColarse(b);
+		
+		assertNotNull(cola);
+		assertFalse(c1);
 	}
 	
 	@Test

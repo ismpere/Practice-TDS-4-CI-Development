@@ -6,6 +6,10 @@ import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
 @Category({Integration.class})
+/**
+ * Clase de test caja negra de integracion de la clase ColaDeAmigos
+ * @author ismpere
+ */
 public class ColaDeAmigosBlackBoxIntegrationTest {
 
 	@Test
@@ -49,8 +53,11 @@ public class ColaDeAmigosBlackBoxIntegrationTest {
 	
 	@Test
 	public void testPuedeColarseFalseSinAmigosColaDeAmigosValido(){
+		Persona a = new Persona("1", "a");
 		Persona b = new Persona("2", "b");
-		ColaDeAmigos cola = new ColaDeAmigos();
+		
+		Persona[] p = {a};
+		ColaDeAmigos cola = new ColaDeAmigos(p);
 		
 		boolean c1 = cola.puedeColarse(b);
 		
