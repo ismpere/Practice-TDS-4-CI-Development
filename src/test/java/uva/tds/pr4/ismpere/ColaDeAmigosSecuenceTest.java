@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
-@Category({Unit.class, Secuence.class})
+@Category({Secuence.class})
 /**
  * Clase de test de secuencia de la clase ColaDeAmigos
  * @author ismpere

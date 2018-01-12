@@ -7,7 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
-@Category({Unit.class})
+@Category({Integration.class})
 /**
  * Fixture de test de la clase ColaDeAmigos
  * @author ismpere
