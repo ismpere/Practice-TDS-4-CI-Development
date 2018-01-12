@@ -155,7 +155,7 @@ public class ColaDeAmigos{
 	}
 	/**
 	 * Devuelve una lista de Persona coladas por p
-	 * La lista estara vacia si p no ha colado a ninguna Persona
+	 * La lista estara vacia si p no ha colada a ninguna Persona
 	 * @param p Persona
 	 * @return lista de Personas coladas por p
 	 * @assert.pre p!=null
