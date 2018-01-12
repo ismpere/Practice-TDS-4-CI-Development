@@ -400,23 +400,32 @@ public class ColaDeAmigosBlackBoxIntegrationTest {
 	public void testGetPersonasColadasColaDeDeAmigosPersonasAtendidasValido(){
 		Persona a = new Persona("1", "a");
 		Persona b = new Persona("2", "b");
+		Persona c = new Persona("3", "c");
 		a.addConocido(b);
 		b.addConocido(a);
 		a.addAmigo(b);
 		b.addAmigo(a);
+		a.addConocido(c);
+		c.addConocido(a);
+		a.addAmigo(c);
+		c.addAmigo(a);
 		ColaDeAmigos cola = new ColaDeAmigos();
 		
-		cola.pedirVez(a, 1);
+		
+		cola.pedirVez(a, 2);
 		
 		cola.colar(b);
+		cola.colar(c);
 		
 		cola.atender();
 		
 		Persona[] p = cola.getPersonasColadasPor(a);
 		
+		Persona[] p1 = {c};
+		
 		assertNotNull(cola);
 		assertNotNull(p);
-		assertEquals(0, p.length);
+		assertArrayEquals(p1, p);
 	}
 	
 	@Test
