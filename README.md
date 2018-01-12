@@ -1,4 +1,3 @@
-
 *** Práctica realizada por Ismael Pérez Martín ***
 	
 	Tiempo total empleado en la realización de la práctica: 20h 16m
@@ -38,3 +37,33 @@
 		ColaDeAmigos------------------------------- SLOC:1644  LLOC:1608
 
 
+*** Aclaración sobre el coverage ***
+
+En EclEmma conseguía casi el 100% de cobertura, pero siempre tenía el mismo problema, 
+había una rama que no se cubría por los test. (1 of 4 branches misses).
+
+Tras buscar por internet, la única opcion que he encontrado es que esa cuarta rama, se ejcuta con los test desactivados.
+Esto lo he podido comprobar ya que hacíendo una rama de prueba, sustituyendo los asertos por excepciones controladas por if, se consegúia el 100% de cobertura en esa rama.
+
+Esto hace que baje la cobertura también en SonarQube, cuando en realidad ramas tan sencillas como comprobar que es nulo, siempre deja una rama sin cubrir.
+
+ 
+ 
+
+*** Aclaración sobre los test de aislamiento ***
+
+Según el criterio que he usado, si usa algún método de otro objeto, el test es de aislamiento, pero para casos como el constructor, solo he considerado que es de aislamiento
+en su caso más básico, ya que sinó por esa misma regla, prácticamente todos los test de ColaDeAmigos serían de aislamiento.
+
+ 
+ 
+
+*** Aclaración sobre el refactor ***
+
+Al tener la herramienta SonarLint instalada en Eclipse, al llegar al ciclo de Refactor, la grán mayoría de errores estaban solucionados, al igual que los 
+code smells, ya que directamente me avisaba en azul cuando hacía algo mal, asique he llegado a ese ciclo sin code smells ni bugs.
+
+Los refactor que he hecho fuera están tambiñen mencionados en el issue eliminar code smells y do refactor, pero en concreto son:
+
+Sustituir el método contains y remove de ArrayList, sobreescribir hashCode por haber sobreescrito equals, sustituir Persona p[] por Persona[] p, y eliminar variables
+que no usaba o imports no usados. También lo he usado para sustituir alguna condición booleana por una versión más simple.
