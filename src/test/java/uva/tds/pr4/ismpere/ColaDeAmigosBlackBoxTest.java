@@ -138,6 +138,45 @@ public class ColaDeAmigosBlackBoxTest {
 	}
 	
 	@Test
+	public void testPuedeColarseFalseConAmigosNoReciprocosColaDeAmigosValido(){
+		Persona a = new Persona("1", "a");
+		Persona b = new Persona("2", "b");
+		Persona c = new Persona("3", "c");
+		a.addConocido(b);
+		b.addConocido(a);
+		b.addAmigo(a);
+
+		ColaDeAmigos cola = new ColaDeAmigos();
+		
+		cola.pedirVez(a, 1);
+		
+		boolean c1 = cola.puedeColarse(b);
+		
+		assertNotNull(cola);
+		assertFalse(c1);
+	}
+	
+	@Test
+	public void testPuedeColarseFalseConAmigosColaDeAmigosValido(){
+		Persona a = new Persona("1", "a");
+		Persona b = new Persona("2", "b");
+		Persona c = new Persona("3", "c");
+		c.addConocido(b);
+		b.addConocido(c);
+		c.addAmigo(b);
+		b.addAmigo(c);
+
+		ColaDeAmigos cola = new ColaDeAmigos();
+		
+		cola.pedirVez(a, 1);
+		
+		boolean c1 = cola.puedeColarse(b);
+		
+		assertNotNull(cola);
+		assertFalse(c1);
+	}
+	
+	@Test
 	public void testPuedeColarseFalseEstaEnLaColaColaDeAmigosValido(){
 		Persona a = new Persona("2", "b");
 		Persona[] p = {a};
@@ -171,6 +210,59 @@ public class ColaDeAmigosBlackBoxTest {
 		cola.colar(c);
 		
 		Persona[] p = {a,c,b};
+		
+		assertNotNull(cola);
+		assertArrayEquals(p, cola.getPersonas());
+	}
+	
+	@Test
+	public void testColarseColaDeAmigosUnoNoReciprocoVariosAmigosValido(){
+		Persona a = new Persona("1", "a");
+		Persona b = new Persona("2", "b");
+		Persona c = new Persona("3", "c");
+		a.addConocido(b);
+		b.addConocido(a);
+		b.addAmigo(a);
+		
+		c.addConocido(b);
+		b.addConocido(c);
+		c.addAmigo(b);
+		b.addAmigo(c);
+		ColaDeAmigos cola = new ColaDeAmigos();
+		
+		cola.pedirVez(a, 1);
+		cola.pedirVez(c, 1);
+		
+		cola.colar(b);
+		
+		Persona[] p = {a,b,c};
+		
+		assertNotNull(cola);
+		assertArrayEquals(p, cola.getPersonas());
+	}
+	
+	@Test
+	public void testColarseColaDeAmigosUnoNoInColaVariosAmigosValido(){
+		Persona a = new Persona("1", "a");
+		Persona b = new Persona("2", "b");
+		Persona c = new Persona("3", "c");
+		c.addConocido(b);
+		b.addConocido(c);
+		c.addAmigo(b);
+		b.addAmigo(c);
+		
+		a.addConocido(b);
+		b.addConocido(a);
+		a.addAmigo(b);
+		b.addAmigo(a);
+	
+		ColaDeAmigos cola = new ColaDeAmigos();
+		
+		cola.pedirVez(a, 1);
+		
+		cola.colar(b);
+		
+		Persona[] p = {b,a};
 		
 		assertNotNull(cola);
 		assertArrayEquals(p, cola.getPersonas());
