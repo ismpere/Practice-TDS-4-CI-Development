@@ -23,19 +23,6 @@ public class ColaDeAmigosUnitTDDTest {
 	}
 	
 	@Test
-	public void testInicializaColaDeAmigosConAmigosValido() {
-		Persona a = new Persona("1", "a");
-		Persona b = new Persona("2", "b");
-		Persona c = new Persona("3", "c");
-		Persona[] p = {a,b,c};
-		
-		ColaDeAmigos cola = new ColaDeAmigos(p);
-		
-		assertNotNull(cola);
-		assertArrayEquals(p, cola.getPersonas());
-	}
-	
-	@Test
 	public void testIsEmptyColaDeAmigosTrueValido() {
 		ColaDeAmigos cola = new ColaDeAmigos();
 		
