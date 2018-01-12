@@ -105,7 +105,7 @@ public class ColaDeAmigos{
 			Persona pa = personas.get(i);
 			if(pa.tieneReservas() && p.isAmigo(pa) && pa.isAmigo(p)){
 				p.setInColaDeAmigos(true);
-				p.setColado(true);
+				p.setColada(true);
 				personas.add(i, p);
 				pa.addPersonaColada();
 				break;
@@ -168,7 +168,7 @@ public class ColaDeAmigos{
 		ArrayList<Persona> coladas = new ArrayList<>();
 		
 		Persona[] c = {};
-		if(p.colado() || personas.size()==1){
+		if(p.getColada() || personas.size()==1){
 			return c;
 		}
 		
@@ -185,7 +185,7 @@ public class ColaDeAmigos{
 	}
 	/**
 	 * Devuelve la Persona a la que le toca ser atendida segun el orden de la cola
-	 * @return personaParaAtender
+	 * @return nextAtendido
 	 * @assert.pre !isEmpty()
 	 */
 	public Persona getNextAtendido() {
