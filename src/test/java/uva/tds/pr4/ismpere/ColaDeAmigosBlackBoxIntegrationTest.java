@@ -329,7 +329,7 @@ public class ColaDeAmigosBlackBoxIntegrationTest {
 		
 		cola.colar(b);
 		
-		int r = cola.getReservas(b);
+		int r = cola.getReservasRestantes(b);
 		
 		Persona[] p = {b,a};
 		

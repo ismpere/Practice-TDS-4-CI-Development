@@ -364,7 +364,7 @@ public class ColaDeAmigosBlackBoxIsolationTest {
 	}
 	
 	@Test
-	public void testGetReservasColaDeDeAmigosSinReservasValido(){
+	public void testGetReservasColaDeDeAmigosSinReservasIsolationValido(){
 		Persona a = createMock(Persona.class);
 		
 		expect(a.getReservas()).andReturn((int)0).once();
@@ -391,7 +391,7 @@ public class ColaDeAmigosBlackBoxIsolationTest {
 	}
 	
 	@Test
-	public void testGetReservasColaDeDeAmigos10ReservasValido(){
+	public void testGetReservasColaDeDeAmigos10ReservasIsolationValido(){
 		Persona a = createMock(Persona.class);
 		
 		expect(a.getReservas()).andReturn((int)10).once();
@@ -415,5 +415,303 @@ public class ColaDeAmigosBlackBoxIsolationTest {
 		assertArrayEquals(p, cola.getPersonas());
 		
 		verify(a);
+	}
+	
+	@Test
+	public void testGetReservasColaDeDeAmigosUnaPersonaColadaIsolationValido(){
+		Persona a = createMock(Persona.class);
+		Persona b = createMock(Persona.class);
+		
+		Persona[] p1 = {a};
+		
+		expect(b.getAmigos()).andReturn((Persona[])p1).once();
+		expect(a.isAmigo(b)).andReturn(true).times(2);
+		expect(b.isAmigo(a)).andReturn(true).once();
+		expect(a.tieneReservas()).andReturn(true).times(2);
+		expect(a.getReservas()).andReturn((int)1).once();
+		
+		a.setInColaDeAmigos(true);
+		b.setInColaDeAmigos(true);
+		a.setReservas(1);
+		b.setColado(true);
+		a.addPersonaColada();
+		expectLastCall();
+		
+		replay(a);
+		replay(b);
+
+		ColaDeAmigos cola = new ColaDeAmigos();
+		
+		cola.pedirVez(a, 1);
+		
+		cola.colar(b);
+		
+		int r = cola.getReservas(a);
+		
+		Persona[] p = {b,a};
+		
+		assertNotNull(cola);
+		assertEquals(1, r);
+		assertArrayEquals(p, cola.getPersonas());
+		
+		verify(a);
+		verify(b);
+	}
+	
+	@Test
+	public void testGetReservasColaDeDeAmigosPersonaColadaIsolationValido(){
+		Persona a = createMock(Persona.class);
+		Persona b = createMock(Persona.class);
+		
+		Persona[] p1 = {a};
+		
+		expect(b.getAmigos()).andReturn((Persona[])p1).once();
+		expect(a.isAmigo(b)).andReturn(true).times(2);
+		expect(b.isAmigo(a)).andReturn(true).once();
+		expect(a.tieneReservas()).andReturn(true).times(2);
+		expect(b.getReservas()).andReturn((int)0).once();
+		
+		a.setInColaDeAmigos(true);
+		b.setInColaDeAmigos(true);
+		a.setReservas(1);
+		b.setColado(true);
+		a.addPersonaColada();
+		expectLastCall();
+		
+		replay(a);
+		replay(b);
+
+		ColaDeAmigos cola = new ColaDeAmigos();
+		
+		cola.pedirVez(a, 1);
+		
+		cola.colar(b);
+		
+		int r = cola.getReservas(b);
+		
+		Persona[] p = {b,a};
+		
+		assertNotNull(cola);
+		assertEquals(0, r);
+		assertArrayEquals(p, cola.getPersonas());
+		
+		verify(a);
+		verify(b);
+	}
+	
+	@Test
+	public void testGetReservasRestantesColaDeDeAmigosSinReservasIsolationValido(){
+		Persona a = createMock(Persona.class);
+		
+		expect(a.getReservasRestantes()).andReturn((int)0).once();
+		
+		a.setInColaDeAmigos(true);
+		a.setReservas(0);
+		expectLastCall();
+		
+		replay(a);
+		
+		ColaDeAmigos cola = new ColaDeAmigos();
+		
+		cola.pedirVez(a, 0);
+		
+		int r = cola.getReservasRestantes(a);
+		
+		Persona[] p = {a};
+		
+		assertNotNull(cola);
+		assertEquals(0, r);
+		assertArrayEquals(p, cola.getPersonas());
+		
+		verify(a);
+	}
+	
+	@Test
+	public void testGetReservasRestantesColaDeDeAmigosPersonaColadaIsolationValido(){
+		Persona a = createMock(Persona.class);
+		Persona b = createMock(Persona.class);
+		
+		Persona[] p1 = {a};
+		
+		expect(b.getAmigos()).andReturn((Persona[])p1).once();
+		expect(a.isAmigo(b)).andReturn(true).times(2);
+		expect(b.isAmigo(a)).andReturn(true).once();
+		expect(a.tieneReservas()).andReturn(true).times(2);
+		expect(b.getReservasRestantes()).andReturn((int)0).once();
+		
+		a.setInColaDeAmigos(true);
+		b.setInColaDeAmigos(true);
+		a.setReservas(1);
+		b.setColado(true);
+		a.addPersonaColada();
+		expectLastCall();
+		
+		replay(a);
+		replay(b);
+
+		ColaDeAmigos cola = new ColaDeAmigos();
+		
+		cola.pedirVez(a, 1);
+		
+		cola.colar(b);
+		
+		int r = cola.getReservasRestantes(b);
+		
+		Persona[] p = {b,a};
+		
+		assertNotNull(cola);
+		assertEquals(0, r);
+		assertArrayEquals(p, cola.getPersonas());
+		
+		verify(a);
+		verify(b);
+	}
+	
+	@Test
+	public void testGetReservasRestantesColaDeDeAmigosUnaPersonaColadaIsolationValido(){
+		Persona a = createMock(Persona.class);
+		Persona b = createMock(Persona.class);
+		
+		Persona[] p1 = {a};
+		
+		expect(b.getAmigos()).andReturn((Persona[])p1).once();
+		expect(a.isAmigo(b)).andReturn(true).times(2);
+		expect(b.isAmigo(a)).andReturn(true).once();
+		expect(a.tieneReservas()).andReturn(true).times(2);
+		expect(a.getReservasRestantes()).andReturn((int)0).once();
+		
+		a.setInColaDeAmigos(true);
+		b.setInColaDeAmigos(true);
+		a.setReservas(1);
+		b.setColado(true);
+		a.addPersonaColada();
+		expectLastCall();
+		
+		replay(a);
+		replay(b);
+
+		ColaDeAmigos cola = new ColaDeAmigos();
+		
+		cola.pedirVez(a, 1);
+		
+		cola.colar(b);
+		
+		int r = cola.getReservasRestantes(a);
+		
+		Persona[] p = {b,a};
+		
+		assertNotNull(cola);
+		assertEquals(0, r);
+		assertArrayEquals(p, cola.getPersonas());
+		
+		verify(a);
+		verify(b);
+	}
+	
+	@Test
+	public void testGetPersonasColadasColaDeDeAmigosNingunaPersonaIsolationValido(){
+		Persona a = createMock(Persona.class);
+		
+		expect(a.colado()).andReturn(false).once();
+		
+		a.setInColaDeAmigos(true);
+		a.setReservas(1);
+		expectLastCall();
+		
+		replay(a);
+		
+		ColaDeAmigos cola = new ColaDeAmigos();
+		
+		cola.pedirVez(a, 1);
+		
+		Persona[] p = cola.getPersonasColadasPor(a);
+		
+		assertNotNull(cola);
+		assertNotNull(p);
+		assertEquals(0, p.length);
+		
+		verify(a);
+	}
+	
+	@Test
+	public void testGetPersonasColadasColaDeDeAmigosPersonaColadaIsolationValido(){
+		Persona a = createMock(Persona.class);
+		Persona b = createMock(Persona.class);
+		
+		Persona[] p1 = {a};
+		
+		expect(b.getAmigos()).andReturn((Persona[])p1).once();
+		expect(a.isAmigo(b)).andReturn(true).times(2);
+		expect(b.isAmigo(a)).andReturn(true).once();
+		expect(a.tieneReservas()).andReturn(true).times(2);
+		expect(b.colado()).andReturn(true).once();
+		
+		a.setInColaDeAmigos(true);
+		b.setInColaDeAmigos(true);
+		a.setReservas(1);
+		b.setColado(true);
+		a.addPersonaColada();
+		expectLastCall();
+		
+		replay(a);
+		replay(b);
+
+		ColaDeAmigos cola = new ColaDeAmigos();
+		
+		cola.pedirVez(a, 1);
+		
+		cola.colar(b);
+		
+		Persona[] p2 = cola.getPersonasColadasPor(b);
+		
+		Persona[] p = {b,a};
+		
+		assertNotNull(cola);
+		assertEquals(0, p2.length);
+		assertArrayEquals(p, cola.getPersonas());
+		
+		verify(a);
+		verify(b);
+	}
+	
+	@Test
+	public void testAtenderColaDeAmigosVariosAmigosIsolationValido(){
+		Persona a = createMock(Persona.class);
+		Persona b = createMock(Persona.class);
+		
+		Persona[] p1 = {a};
+		
+		expect(b.getAmigos()).andReturn((Persona[])p1).once();
+		expect(a.isAmigo(b)).andReturn(true).times(2);
+		expect(b.isAmigo(a)).andReturn(true).once();
+		expect(a.tieneReservas()).andReturn(true).times(2);
+		
+		a.setInColaDeAmigos(true);
+		b.setInColaDeAmigos(true);
+		a.setReservas(1);
+		b.setColado(true);
+		a.addPersonaColada();
+		a.setInColaDeAmigos(false);
+		b.setInColaDeAmigos(false);
+		expectLastCall();
+		
+		replay(a);
+		replay(b);
+
+		ColaDeAmigos cola = new ColaDeAmigos();
+		
+		cola.pedirVez(a, 1);
+		
+		cola.colar(b);
+		
+		cola.atender();
+		cola.atender();
+		
+		
+		assertNotNull(cola);
+		assertTrue(cola.isEmpty());
+		
+		verify(a);
+		verify(b);
 	}
 }
