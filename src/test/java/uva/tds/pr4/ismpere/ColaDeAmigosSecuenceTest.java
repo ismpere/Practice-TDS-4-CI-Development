@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
-@Category({Unit.class, Secuence.class})
+@Category({Secuence.class})
 /**
  * Clase de test de secuencia de la clase ColaDeAmigos
  * @author ismpere
@@ -16,10 +16,10 @@ public class ColaDeAmigosSecuenceTest {
 	public void testSecuenciaValidaAtiendeColaDeAmigos() {
 		Persona a = new Persona("1", "a");
 		Persona b = new Persona("2", "b");
-		a.isConocido(b);
-		b.isConocido(a);
-		a.isAmigo(b);
-		b.isAmigo(a);
+		a.addConocido(b);
+		b.addConocido(a);
+		a.addAmigo(b);
+		b.addAmigo(a);
 		Persona[] p = {a};
 		
 		ColaDeAmigos cola = new ColaDeAmigos(p);
@@ -50,10 +50,10 @@ public class ColaDeAmigosSecuenceTest {
 	public void testSecuenciaNoValidaAtiendeSinPersonasColaDeAmigos() {
 		Persona a = new Persona("1", "a");
 		Persona b = new Persona("2", "b");
-		a.isConocido(b);
-		b.isConocido(a);
-		a.isAmigo(b);
-		b.isAmigo(a);
+		a.addConocido(b);
+		b.addConocido(a);
+		a.addAmigo(b);
+		b.addAmigo(a);
 		Persona[] p = {a};
 		
 		ColaDeAmigos cola = new ColaDeAmigos(p);
@@ -77,20 +77,20 @@ public class ColaDeAmigosSecuenceTest {
 		Persona c = new Persona("3", "c");
 		Persona d = new Persona("4", "d");
 		Persona e = new Persona("5", "e");
-		a.isConocido(b);
-		b.isConocido(a);
-		a.isAmigo(b);
-		b.isAmigo(a);
+		a.addConocido(b);
+		b.addConocido(a);
+		a.addAmigo(b);
+		b.addAmigo(a);
 		
-		a.isConocido(d);
-		d.isConocido(a);
-		a.isAmigo(d);
-		d.isAmigo(a);
+		a.addConocido(d);
+		d.addConocido(a);
+		a.addAmigo(d);
+		d.addAmigo(a);
 		
-		a.isConocido(e);
-		e.isConocido(a);
-		a.isAmigo(e);
-		e.isAmigo(a);
+		a.addConocido(e);
+		e.addConocido(a);
+		a.addAmigo(e);
+		e.addAmigo(a);
 		Persona[] p = {a};
 		
 		ColaDeAmigos cola = new ColaDeAmigos(p);
@@ -122,6 +122,6 @@ public class ColaDeAmigosSecuenceTest {
 		assertFalse(c1);
 		assertEquals(c, p1);
 		assertEquals(b, p2);
-		assertEquals(1, r1);
+		assertEquals(0, r1);
 	}
 }
