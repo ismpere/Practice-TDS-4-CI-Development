@@ -6,8 +6,10 @@ import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
 @SuiteClasses({ 
-	ColaDeAmigosTDDTest.class,
-	ColaDeAmigosBlackBoxTest.class,
+	ColaDeAmigosUnitTDDTest.class,
+	ColaDeAmigosIntegrationTDDTest.class,
+	ColaDeAmigosBlackBoxUnitTest.class,
+	ColaDeAmigosBlackBoxIntegrationTest.class,
 	ColaDeAmigosSecuenceTest.class,
 	ColaDeAmigosConAmigosYColadosTest.class})
 
