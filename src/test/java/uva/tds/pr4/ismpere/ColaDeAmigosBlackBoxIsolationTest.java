@@ -675,6 +675,57 @@ public class ColaDeAmigosBlackBoxIsolationTest {
 	}
 	
 	@Test
+	public void testGetPersonasColadasColaDeDeAmigosPersonasAtendidasValido(){
+		Persona a = createMock(Persona.class);
+		Persona b = createMock(Persona.class);
+		Persona c = createMock(Persona.class);
+		
+		Persona[] p1 = {a};
+		
+		expect(b.getAmigos()).andReturn((Persona[])p1).once();
+		expect(a.isAmigo(b)).andReturn(true).times(2);
+		expect(b.isAmigo(a)).andReturn(true).once();
+		expect(a.colado()).andReturn(false).once();
+		expect(a.getReservas()).andReturn((int)2).once();
+		expect(a.getReservasRestantes()).andReturn((int)1).once();
+		expect(a.tieneReservas()).andReturn(true).times(2);
+		
+		a.setInColaDeAmigos(true);
+		b.setInColaDeAmigos(true);
+		c.setInColaDeAmigos(true);
+		c.setReservas(0);
+		a.setReservas(2);
+		b.setColado(true);
+		a.addPersonaColada();
+		b.setInColaDeAmigos(false);
+		expectLastCall();
+		
+		replay(a);
+		replay(b);
+
+		ColaDeAmigos cola = new ColaDeAmigos();
+		
+		cola.pedirVez(a, 2);
+		cola.pedirVez(c, 0);
+		
+		cola.colar(b);
+		
+		cola.atender();
+		
+		Persona[] p2 = cola.getPersonasColadasPor(a);
+		
+		Persona[] p = {a,c};
+		
+		assertNotNull(cola);
+		assertNotNull(p2);
+		assertEquals(0, p2.length);
+		assertArrayEquals(p, cola.getPersonas());
+		
+		verify(a);
+		verify(b);
+	}
+	
+	@Test
 	public void testAtenderColaDeAmigosVariosAmigosIsolationValido(){
 		Persona a = createMock(Persona.class);
 		Persona b = createMock(Persona.class);

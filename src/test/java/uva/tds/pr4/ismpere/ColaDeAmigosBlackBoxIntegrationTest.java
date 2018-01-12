@@ -405,27 +405,25 @@ public class ColaDeAmigosBlackBoxIntegrationTest {
 		b.addConocido(a);
 		a.addAmigo(b);
 		b.addAmigo(a);
-		a.addConocido(c);
-		c.addConocido(a);
-		a.addAmigo(c);
-		c.addAmigo(a);
+		
 		ColaDeAmigos cola = new ColaDeAmigos();
 		
 		
 		cola.pedirVez(a, 2);
+		cola.pedirVez(c, 0);
 		
 		cola.colar(b);
-		cola.colar(c);
 		
 		cola.atender();
 		
 		Persona[] p = cola.getPersonasColadasPor(a);
 		
-		Persona[] p1 = {c};
+		Persona[] p1 = {a,c};
 		
 		assertNotNull(cola);
 		assertNotNull(p);
-		assertArrayEquals(p1, p);
+		assertEquals(0, p.length);
+		assertArrayEquals(p1, cola.getPersonas());
 	}
 	
 	@Test
