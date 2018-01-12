@@ -50,7 +50,7 @@ public class PersonaTieneReservasTest {
 		
 		boolean c1 = a.getColado();
 		
-		boolean c2 = a.isInColaDeAmigos();
+		boolean c2 = a.getInColaDeAmigos();
 		
 		assertNotNull(a);
 		assertEquals(2, r1);

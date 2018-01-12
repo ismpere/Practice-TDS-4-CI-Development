@@ -136,7 +136,7 @@ public class PersonaBlackBoxTest {
 	public void testIsInColaDeAmigosFalsePersonaValido(){
 		Persona a = new Persona("1", "a");
 		
-		boolean i = a.isInColaDeAmigos();
+		boolean i = a.getInColaDeAmigos();
 		
 		assertNotNull(a);
 		assertFalse(i);
@@ -149,7 +149,7 @@ public class PersonaBlackBoxTest {
 		a.setInColaDeAmigos(false);
 		
 		assertNotNull(a);
-		assertFalse(a.isInColaDeAmigos());
+		assertFalse(a.getInColaDeAmigos());
 	}
 	
 	@Test
