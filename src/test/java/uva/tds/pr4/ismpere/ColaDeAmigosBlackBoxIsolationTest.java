@@ -281,49 +281,51 @@ public class ColaDeAmigosBlackBoxIsolationTest {
 		verify(b);
 	}
 	
-	/*@Test
+	@Test
 	public void testColarseColaDeAmigosUnoNoReciprocoVariosAmigosIsolationValido(){	
 		Persona a = createMock(Persona.class);
 		Persona b = createMock(Persona.class);
 		Persona c = createMock(Persona.class);
 		
-		Persona[] p1 = {a,c};
+		Persona[] p1 = {c,a};
 		
 		expect(b.getAmigos()).andReturn((Persona[])p1).once();
-		expect(c.isAmigo(b)).andReturn(true).once();
-		expect(a.isAmigo(b)).andReturn(false).once();
+		expect(a.isAmigo(b)).andReturn(true).times(2);
 		expect(b.isAmigo(a)).andReturn(true).once();
-		expect(b.isAmigo(c)).andReturn(true).once();
 		expect(a.tieneReservas()).andReturn(true).times(2);
-		expect(c.tieneReservas()).andReturn(true).times(2);
+		expect(c.tieneReservas()).andReturn(true).once();
+		expect(b.isAmigo(c)).andReturn(true).once();
+		expect(c.isAmigo(b)).andReturn(false).times(2);
 		
 		a.setInColaDeAmigos(true);
-		c.setInColaDeAmigos(true);
 		b.setInColaDeAmigos(true);
+		c.setInColaDeAmigos(true);
 		a.setReservas(1);
 		c.setReservas(1);
-		b.setColado(true);
-		c.addPersonaColada();
+		b.setColada(true);
+		a.addPersonaColada();
 		expectLastCall();
 		
 		replay(a);
 		replay(b);
+		replay(c);
 
 		ColaDeAmigos cola = new ColaDeAmigos();
 		
-		cola.pedirVez(a, 1);
 		cola.pedirVez(c, 1);
+		cola.pedirVez(a, 1);
 		
 		cola.colar(b);
 		
-		Persona[] p = {a,b,c};
+		Persona[] p = {c,b,a};
 		
 		assertNotNull(cola);
 		assertArrayEquals(p, cola.getPersonas());
 		
 		verify(a);
 		verify(b);
-	}*/
+		verify(c);
+	}
 	
 	@Test
 	public void testColarseColaDeAmigosUnoNoInColaVariosAmigosIsolationValido(){
