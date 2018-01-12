@@ -57,20 +57,20 @@ public class ColaDeAmigosUnitTDDTest {
 		
 		ColaDeAmigos cola = new ColaDeAmigos(p);
 		
-		boolean is = cola.isInCola(a);
+		boolean is = cola.contains(a);
 		
 		assertNotNull(cola);
 		assertTrue(is);
 	}
 	
 	@Test
-	public void testGetPersonaParaAtenderColaDeAmigosUnaPersonaValido() {
+	public void testGetNextAtendidoColaDeAmigosUnaPersonaValido() {
 		Persona a = new Persona("1", "a");
 		Persona[] p = {a};
 		
 		ColaDeAmigos cola = new ColaDeAmigos(p);
 		
-		Persona p1 = cola.getPersonaParaAtender();
+		Persona p1 = cola.getNextAtendido();
 		
 		assertNotNull(cola);
 		assertNotNull(p1);

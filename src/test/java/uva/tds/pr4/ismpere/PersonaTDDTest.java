@@ -184,7 +184,7 @@ public class PersonaTDDTest {
 		a.setInColaDeAmigos(true);
 		
 		assertNotNull(a);
-		assertTrue(a.isInColaDeAmigos());
+		assertTrue(a.getInColaDeAmigos());
 	}
 	
 	@Test
@@ -193,7 +193,7 @@ public class PersonaTDDTest {
 		Persona a = new Persona("1", "a");
 		
 		a.setInColaDeAmigos(true);
-		boolean i = a.isInColaDeAmigos();
+		boolean i = a.getInColaDeAmigos();
 		
 		assertNotNull(a);
 		assertTrue(i);
@@ -204,10 +204,10 @@ public class PersonaTDDTest {
 		Persona a = new Persona("1", "a");
 		
 		a.setInColaDeAmigos(true);
-		a.setColado(true);
+		a.setColada(true);
 		
 		assertNotNull(a);
-		assertTrue(a.colado());
+		assertTrue(a.getColada());
 	}
 	
 	@Test
@@ -215,8 +215,8 @@ public class PersonaTDDTest {
 		Persona a = new Persona("1", "a");
 		
 		a.setInColaDeAmigos(true);
-		a.setColado(true);
-		boolean c = a.colado();
+		a.setColada(true);
+		boolean c = a.getColada();
 		
 		assertNotNull(a);
 		assertTrue(c);

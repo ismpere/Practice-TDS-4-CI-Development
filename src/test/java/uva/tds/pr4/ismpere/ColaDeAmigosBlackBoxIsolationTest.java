@@ -136,7 +136,7 @@ public class ColaDeAmigosBlackBoxIsolationTest {
 		a.setReservas(1);
 		a.addPersonaColada();
 		c.setInColaDeAmigos(true);
-		c.setColado(true);
+		c.setColada(true);
 		expectLastCall();
 		
 		replay(a);
@@ -258,7 +258,7 @@ public class ColaDeAmigosBlackBoxIsolationTest {
 		b.setInColaDeAmigos(true);
 		a.setReservas(1);
 		c.setReservas(1);
-		b.setColado(true);
+		b.setColada(true);
 		a.addPersonaColada();
 		expectLastCall();
 		
@@ -340,7 +340,7 @@ public class ColaDeAmigosBlackBoxIsolationTest {
 		
 		a.setInColaDeAmigos(true);
 		a.setReservas(1);
-		b.setColado(true);
+		b.setColada(true);
 		a.addPersonaColada();
 		b.setInColaDeAmigos(true);
 		expectLastCall();
@@ -433,7 +433,7 @@ public class ColaDeAmigosBlackBoxIsolationTest {
 		a.setInColaDeAmigos(true);
 		b.setInColaDeAmigos(true);
 		a.setReservas(1);
-		b.setColado(true);
+		b.setColada(true);
 		a.addPersonaColada();
 		expectLastCall();
 		
@@ -474,7 +474,7 @@ public class ColaDeAmigosBlackBoxIsolationTest {
 		a.setInColaDeAmigos(true);
 		b.setInColaDeAmigos(true);
 		a.setReservas(1);
-		b.setColado(true);
+		b.setColada(true);
 		a.addPersonaColada();
 		expectLastCall();
 		
@@ -542,7 +542,7 @@ public class ColaDeAmigosBlackBoxIsolationTest {
 		a.setInColaDeAmigos(true);
 		b.setInColaDeAmigos(true);
 		a.setReservas(1);
-		b.setColado(true);
+		b.setColada(true);
 		a.addPersonaColada();
 		expectLastCall();
 		
@@ -583,7 +583,7 @@ public class ColaDeAmigosBlackBoxIsolationTest {
 		a.setInColaDeAmigos(true);
 		b.setInColaDeAmigos(true);
 		a.setReservas(1);
-		b.setColado(true);
+		b.setColada(true);
 		a.addPersonaColada();
 		expectLastCall();
 		
@@ -612,7 +612,7 @@ public class ColaDeAmigosBlackBoxIsolationTest {
 	public void testGetPersonasColadasColaDeDeAmigosNingunaPersonaIsolationValido(){
 		Persona a = createMock(Persona.class);
 		
-		expect(a.colado()).andReturn(false).once();
+		expect(a.getColada()).andReturn(false).once();
 		
 		a.setInColaDeAmigos(true);
 		a.setReservas(1);
@@ -644,12 +644,12 @@ public class ColaDeAmigosBlackBoxIsolationTest {
 		expect(a.isAmigo(b)).andReturn(true).times(2);
 		expect(b.isAmigo(a)).andReturn(true).once();
 		expect(a.tieneReservas()).andReturn(true).times(2);
-		expect(b.colado()).andReturn(true).once();
+		expect(b.getColada()).andReturn(true).once();
 		
 		a.setInColaDeAmigos(true);
 		b.setInColaDeAmigos(true);
 		a.setReservas(1);
-		b.setColado(true);
+		b.setColada(true);
 		a.addPersonaColada();
 		expectLastCall();
 		
@@ -685,7 +685,7 @@ public class ColaDeAmigosBlackBoxIsolationTest {
 		expect(b.getAmigos()).andReturn((Persona[])p1).once();
 		expect(a.isAmigo(b)).andReturn(true).times(2);
 		expect(b.isAmigo(a)).andReturn(true).once();
-		expect(a.colado()).andReturn(false).once();
+		expect(a.getColada()).andReturn(false).once();
 		expect(a.getReservas()).andReturn((int)2).once();
 		expect(a.getReservasRestantes()).andReturn((int)1).once();
 		expect(a.tieneReservas()).andReturn(true).times(2);
@@ -695,7 +695,7 @@ public class ColaDeAmigosBlackBoxIsolationTest {
 		c.setInColaDeAmigos(true);
 		c.setReservas(0);
 		a.setReservas(2);
-		b.setColado(true);
+		b.setColada(true);
 		a.addPersonaColada();
 		b.setInColaDeAmigos(false);
 		expectLastCall();
@@ -740,7 +740,7 @@ public class ColaDeAmigosBlackBoxIsolationTest {
 		a.setInColaDeAmigos(true);
 		b.setInColaDeAmigos(true);
 		a.setReservas(1);
-		b.setColado(true);
+		b.setColada(true);
 		a.addPersonaColada();
 		a.setInColaDeAmigos(false);
 		b.setInColaDeAmigos(false);

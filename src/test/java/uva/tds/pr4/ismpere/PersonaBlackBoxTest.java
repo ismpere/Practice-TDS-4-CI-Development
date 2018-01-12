@@ -136,7 +136,7 @@ public class PersonaBlackBoxTest {
 	public void testIsInColaDeAmigosFalsePersonaValido(){
 		Persona a = new Persona("1", "a");
 		
-		boolean i = a.isInColaDeAmigos();
+		boolean i = a.getInColaDeAmigos();
 		
 		assertNotNull(a);
 		assertFalse(i);
@@ -149,7 +149,7 @@ public class PersonaBlackBoxTest {
 		a.setInColaDeAmigos(false);
 		
 		assertNotNull(a);
-		assertFalse(a.isInColaDeAmigos());
+		assertFalse(a.getInColaDeAmigos());
 	}
 	
 	@Test
@@ -157,10 +157,10 @@ public class PersonaBlackBoxTest {
 		Persona a = new Persona("1", "a");
 		a.setInColaDeAmigos(true);
 		
-		a.setColado(false);
+		a.setColada(false);
 		
 		assertNotNull(a);
-		assertFalse(a.colado());
+		assertFalse(a.getColada());
 	}
 	
 	@Test
@@ -190,7 +190,7 @@ public class PersonaBlackBoxTest {
 	public void testGetNumeroDeReservasPersonaColadaPersonaValido() {
 		Persona a = new Persona("1", "a");
 		a.setInColaDeAmigos(true);
-		a.setColado(true);
+		a.setColada(true);
 		
 		int r = a.getReservas();
 		
@@ -216,7 +216,7 @@ public class PersonaBlackBoxTest {
 	public void testGetNumeroDeReservasRestantesPersonaColadaValido() {
 		Persona a = new Persona("1", "a");
 		a.setInColaDeAmigos(true);
-		a.setColado(true);
+		a.setColada(true);
 		
 		int r = a.getReservasRestantes();
 		
@@ -562,14 +562,14 @@ public class PersonaBlackBoxTest {
 	public void testSetColadoNotInColaDeAmigosNoValido() {
 		Persona a = new Persona("1", "a");
 		
-		a.setColado(true);
+		a.setColada(true);
 	}
 	
 	@Test(expected = AssertionError.class)
 	public void testColadoNotInColaDeAmigosNoValido() {
 		Persona a = new Persona("1", "a");
 		
-		a.colado();
+		a.getColada();
 	}
 	
 	@Test(expected = AssertionError.class)
@@ -583,7 +583,7 @@ public class PersonaBlackBoxTest {
 	public void testSetReservasColadoAmigosNoValido() {
 		Persona a = new Persona("1", "a");
 		a.setInColaDeAmigos(true);
-		a.setColado(true);
+		a.setColada(true);
 		
 		a.setReservas(1);
 	}
@@ -642,7 +642,7 @@ public class PersonaBlackBoxTest {
 		Persona a = new Persona("1", "a");
 		a.setInColaDeAmigos(true);
 		
-		a.setColado(true);
+		a.setColada(true);
 		
 		a.addPersonaColada();
 	}

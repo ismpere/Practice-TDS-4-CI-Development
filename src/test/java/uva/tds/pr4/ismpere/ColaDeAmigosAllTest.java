@@ -11,7 +11,9 @@ import org.junit.runners.Suite.SuiteClasses;
 	ColaDeAmigosBlackBoxUnitTest.class,
 	ColaDeAmigosBlackBoxIntegrationTest.class,
 	ColaDeAmigosSecuenceTest.class,
-	ColaDeAmigosConAmigosYColadosTest.class})
+	ColaDeAmigosConAmigosYColadosTest.class,
+	ColaDeAmigosIsolationTDDTest.class,
+	ColaDeAmigosBlackBoxIsolationTest.class})
 
 /**
  * Suite de test de la clase ColaDeAmigos
