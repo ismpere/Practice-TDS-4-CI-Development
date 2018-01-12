@@ -96,7 +96,7 @@ public class ColaDeAmigosConAmigosYColadosTest {
 	}
 	
 	@Test
-	public void testGetPersonaParaAtenderValido() {
+	public void testGetNextAtendidoValido() {
 		Persona p1 = cola.getNextAtendido();
 		
 		assertNotNull(p1);

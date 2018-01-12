@@ -64,7 +64,7 @@ public class ColaDeAmigosUnitTDDTest {
 	}
 	
 	@Test
-	public void testGetPersonaParaAtenderColaDeAmigosUnaPersonaValido() {
+	public void testGetNextAtendidoColaDeAmigosUnaPersonaValido() {
 		Persona a = new Persona("1", "a");
 		Persona[] p = {a};
 		

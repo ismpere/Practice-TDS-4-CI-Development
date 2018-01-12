@@ -74,7 +74,7 @@ public class ColaDeAmigosBlackBoxUnitTest {
 	}
 	
 	@Test
-	public void testGetPersonaParaAtenderColaDeAmigosVariosAmigosValido(){
+	public void testGetNextAtendidoColaDeAmigosVariosAmigosValido(){
 		Persona a = new Persona("1", "a");
 		Persona b = new Persona("2", "b");
 		a.addConocido(b);
@@ -255,7 +255,7 @@ public class ColaDeAmigosBlackBoxUnitTest {
 	}
 	
 	@Test (expected = AssertionError.class)
-	public void testgetPersonaParaAtenderColaDeDeAmigosIsEmptyNoValido(){
+	public void testGetNextAtendidoColaDeDeAmigosIsEmptyNoValido(){
 		ColaDeAmigos cola = new ColaDeAmigos();
 		
 		cola.getNextAtendido();
