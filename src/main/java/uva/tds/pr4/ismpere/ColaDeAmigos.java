@@ -172,7 +172,7 @@ public class ColaDeAmigos{
 			return c;
 		}
 		
-		int posIni = getPosicion(p)-2;
+		int posIni = personas.indexOf(p)-1;
 		int r = getReservas(p)-getReservasRestantes(p);
 		
 		for(int i=posIni; i>=0 && r>0; i--, r--){
@@ -223,17 +223,7 @@ public class ColaDeAmigos{
 		assert(p!=null);
 		assert(isInCola(p));
 		
-		int pos = 0;
-		
-		for(int i=0; i<personas.size(); i++){
-			Persona pAux = personas.get(i);
-			if(p.equals(pAux)){
-				pos = i;
-				break;
-			}
-		}
-		
-		return pos+1;
+		return personas.indexOf(p)+1;
 	}
 	
 }
