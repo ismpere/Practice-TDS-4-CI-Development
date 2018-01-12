@@ -333,7 +333,7 @@ public class Persona{
 		if(p.length==0)
 			return false;
 		
-		return Arrays.asList(p).contains(null);
+		return !(Arrays.asList(p).indexOf(null)==-1);
 	}
 	
 	@Override
