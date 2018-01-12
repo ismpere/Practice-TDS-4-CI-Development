@@ -6,7 +6,7 @@
 
 	Clases que forman parte de la solución del proyecto:
 
-        (main)
+    (main)
 		Persona------------------------------------ SLOC:324  LLOC:176
 		ColaDeAmigos------------------------------- SLOC:202  LLOC:111 
 		
