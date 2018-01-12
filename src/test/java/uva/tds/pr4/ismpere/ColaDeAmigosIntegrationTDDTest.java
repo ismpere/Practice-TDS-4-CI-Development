@@ -3,79 +3,9 @@ package uva.tds.pr4.ismpere;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
-import org.junit.experimental.categories.Category;
 
-@Category({Unit.class})
-/**
- * Clase de test TDD de la clase ColaDeAmigos
- * @author ismpere
- */
-public class ColaDeAmigosTDDTest {
+public class ColaDeAmigosIntegrationTDDTest {
 
-	@Test
-	public void testInicializaColaDeAmigosSinNadieValido() {
-		ColaDeAmigos cola = new ColaDeAmigos();
-		
-		Persona[] p = {};
-		
-		assertNotNull(cola);
-		assertArrayEquals(p, cola.getPersonas());
-	}
-	
-	@Test
-	public void testInicializaColaDeAmigosConAmigosValido() {
-		Persona a = new Persona("1", "a");
-		Persona b = new Persona("2", "b");
-		Persona c = new Persona("3", "c");
-		Persona[] p = {a,b,c};
-		
-		ColaDeAmigos cola = new ColaDeAmigos(p);
-		
-		assertNotNull(cola);
-		assertArrayEquals(p, cola.getPersonas());
-	}
-	
-	@Test
-	public void testIsEmptyColaDeAmigosTrueValido() {
-		ColaDeAmigos cola = new ColaDeAmigos();
-		
-		boolean c = cola.isEmpty();
-		
-		assertNotNull(cola);
-		assertTrue(c);
-	}
-	
-	@Test
-	public void testGetPersonasColaDeAmigosValido() {
-		Persona a = new Persona("1", "a");
-		Persona b = new Persona("2", "b");
-		Persona c = new Persona("3", "c");
-		Persona[] p = {a,b,c};
-		
-		ColaDeAmigos cola = new ColaDeAmigos(p);
-		
-		Persona[] p2 = cola.getPersonas();
-		
-		assertNotNull(cola);
-		assertNotNull(p2);
-		assertArrayEquals(p2, p);
-	}
-	
-	@Test
-	public void testIsInColaDeAmigosTrueValido() {
-		Persona a = new Persona("1", "a");
-		Persona b = new Persona("2", "b");
-		Persona c = new Persona("3", "c");
-		Persona[] p = {a,b,c};
-		
-		ColaDeAmigos cola = new ColaDeAmigos(p);
-		
-		boolean is = cola.isInCola(a);
-		
-		assertNotNull(cola);
-		assertTrue(is);
-	}
-	
 	@Test
 	public void testPedirVezSinReservarColaDeAmigosValido(){
 		Persona a = new Persona("1", "a");
@@ -89,7 +19,7 @@ public class ColaDeAmigosTDDTest {
 		assertArrayEquals(p, cola.getPersonas());
 		assertEquals(0, cola.getReservas(a));
 	}
-	
+
 	@Test
 	public void testPuedeColarseColaDeAmigosValido(){
 		Persona a = new Persona("1", "a");
@@ -188,21 +118,6 @@ public class ColaDeAmigosTDDTest {
 	}
 	
 	@Test
-	public void testGetPersonaParaAtenderColaDeAmigosUnaPersonaValido() {
-		Persona a = new Persona("1", "a");
-		Persona[] p = {a};
-		
-		ColaDeAmigos cola = new ColaDeAmigos(p);
-		
-		Persona p1 = cola.getPersonaParaAtender();
-		
-		assertNotNull(cola);
-		assertNotNull(p1);
-		assertEquals(p1, a);
-		assertArrayEquals(p, cola.getPersonas());
-	}
-	
-	@Test
 	public void testAtenderPersonaColaDeAmigosUnaPersonaValido() {
 		Persona a = new Persona("1", "a");
 		Persona[] p = {a};
@@ -213,18 +128,5 @@ public class ColaDeAmigosTDDTest {
 		
 		assertNotNull(cola);
 		assertTrue(cola.isEmpty());
-	}
-	
-	@Test
-	public void testGetPosicionPersonaValido() {
-		Persona a = new Persona("1", "a");
-		Persona[] p = {a};
-		
-		ColaDeAmigos cola = new ColaDeAmigos(p);
-		
-		int pos = cola.getPosicion(a);
-		
-		assertNotNull(a);
-		assertEquals(1, pos);
 	}
 }
