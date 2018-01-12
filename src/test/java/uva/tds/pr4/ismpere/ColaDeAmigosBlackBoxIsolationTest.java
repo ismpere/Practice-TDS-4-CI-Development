@@ -287,12 +287,15 @@ public class ColaDeAmigosBlackBoxIsolationTest {
 		Persona b = createMock(Persona.class);
 		Persona c = createMock(Persona.class);
 		
-		Persona[] p1 = {a};
+		Persona[] p1 = {c,a};
 		
 		expect(b.getAmigos()).andReturn((Persona[])p1).once();
 		expect(a.isAmigo(b)).andReturn(true).times(2);
 		expect(b.isAmigo(a)).andReturn(true).once();
 		expect(a.tieneReservas()).andReturn(true).times(2);
+		expect(c.tieneReservas()).andReturn(true).once();
+		expect(b.isAmigo(c)).andReturn(true).once();
+		expect(c.isAmigo(b)).andReturn(false).times(2);
 		
 		a.setInColaDeAmigos(true);
 		b.setInColaDeAmigos(true);
@@ -305,6 +308,7 @@ public class ColaDeAmigosBlackBoxIsolationTest {
 		
 		replay(a);
 		replay(b);
+		replay(c);
 
 		ColaDeAmigos cola = new ColaDeAmigos();
 		
@@ -320,6 +324,7 @@ public class ColaDeAmigosBlackBoxIsolationTest {
 		
 		verify(a);
 		verify(b);
+		verify(c);
 	}
 	
 	@Test
