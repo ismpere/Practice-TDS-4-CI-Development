@@ -204,10 +204,10 @@ public class PersonaTDDTest {
 		Persona a = new Persona("1", "a");
 		
 		a.setInColaDeAmigos(true);
-		a.setColado(true);
+		a.setColada(true);
 		
 		assertNotNull(a);
-		assertTrue(a.getColado());
+		assertTrue(a.getColada());
 	}
 	
 	@Test
@@ -215,8 +215,8 @@ public class PersonaTDDTest {
 		Persona a = new Persona("1", "a");
 		
 		a.setInColaDeAmigos(true);
-		a.setColado(true);
-		boolean c = a.getColado();
+		a.setColada(true);
+		boolean c = a.getColada();
 		
 		assertNotNull(a);
 		assertTrue(c);

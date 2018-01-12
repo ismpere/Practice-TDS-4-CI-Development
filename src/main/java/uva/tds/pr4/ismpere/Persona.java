@@ -14,7 +14,7 @@ public class Persona{
 	private String nombre;
 	private ArrayList<Persona> conocidos;
 	private ArrayList<Persona> amigos;
-	private boolean colado;
+	private boolean colada;
 	private boolean inCola;
 	private int reservas;
 	private int reservasUsadas;
@@ -43,7 +43,7 @@ public class Persona{
 		
 		conocidos = new ArrayList<>();
 		amigos = new ArrayList<>();
-		colado = false;
+		colada = false;
 		inCola = false;
 		reservas = 0;
 		reservasUsadas = 0;
@@ -189,23 +189,23 @@ public class Persona{
 	}
 	/**
 	 * Pone a una Persona como colada o como no colada por otra Persona
-	 * @param colado
+	 * @param colada
 	 * @assert.pre getInColaDeAmigos()
 	 */
-	public void setColado(boolean colado) {
+	public void setColada (boolean colada) {
 		assert(getInColaDeAmigos());
 		
-		this.colado = colado;
+		this.colada = colada;
 	}
 	/**
 	 * Devuelve si una Persona ha sido colada por otra Persona o no
-	 * @return colado
+	 * @return colada
 	 * @assert.pre getInColaDeAmigos()
 	 */
-	public boolean getColado() {
+	public boolean getColada() {
 		assert(getInColaDeAmigos());
 		
-		return colado;
+		return colada;
 	}
 	/**
 	 * Identifica si una Persona está o no en una ColaDeAmigos
@@ -217,7 +217,7 @@ public class Persona{
 		if(!inCola){
 			reservas=0;
 			reservasUsadas=0;
-			colado=false;	
+			colada=false;	
 		}
 	}
 	/**
@@ -231,13 +231,13 @@ public class Persona{
 	 * Añade las reservas de sitio que hace una Persona para la cola
 	 * @param n Numero de reservas
 	 * @assert.pre getInColaDeAmigos()
-	 * @assert.pre !getColado()
+	 * @assert.pre !getcolada()
 	 * @assert.pre reservas>0
 	 * @assert.pre reservas<11
 	 */
 	public void setReservas(int reservas) {
 		assert(getInColaDeAmigos());
-		assert(!getColado());
+		assert(!getColada());
 		assert(reservas>=0);
 		assert(reservas<11);
 		
@@ -251,7 +251,7 @@ public class Persona{
 	public int getReservas() {
 		assert(getInColaDeAmigos());
 		
-		if(getColado())
+		if(getColada())
 			return 0;
 		
 		return reservas;
@@ -259,12 +259,12 @@ public class Persona{
 	/**
 	 * Incrementa en uno el numero de personas coladas por Persona en la cola
 	 * @assert.pre getInColaDeAmigos()
-	 * @assert.pre !getColado()
+	 * @assert.pre !getColada()
 	 * @assert.pre tieneReservas()
 	 */
 	public void addPersonaColada() {
 		assert(getInColaDeAmigos());
-		assert(!getColado());
+		assert(!getColada());
 		assert(tieneReservas());
 		
 		reservasUsadas++;
@@ -277,7 +277,7 @@ public class Persona{
 	public int getReservasRestantes() {
 		assert(getInColaDeAmigos());
 		
-		if(getColado())
+		if(getColada())
 			return 0;
 		
 		return reservas-reservasUsadas;

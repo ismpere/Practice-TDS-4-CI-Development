@@ -48,7 +48,7 @@ public class PersonaTieneReservasTest {
 		
 		boolean r3 = a.tieneReservas();
 		
-		boolean c1 = a.getColado();
+		boolean c1 = a.getColada();
 		
 		boolean c2 = a.getInColaDeAmigos();
 		
