@@ -5,9 +5,9 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
-@Category({Unit.class})
+@Category({Unit.class, TDD.class})
 /**
- * Clase de test TDD de la clase ColaDeAmigos
+ * Clase de test TDD unitarios de la clase ColaDeAmigos
  * @author ismpere
  */
 public class ColaDeAmigosUnitTDDTest {

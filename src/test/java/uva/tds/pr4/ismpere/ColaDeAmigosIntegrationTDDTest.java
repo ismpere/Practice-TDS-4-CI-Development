@@ -3,7 +3,13 @@ package uva.tds.pr4.ismpere;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
+@Category({Integration.class, TDD.class})
+/**
+ * Clase de test TDD de integracion de la clase ColaDeAmigos
+ * @author ismpere
+ */
 public class ColaDeAmigosIntegrationTDDTest {
 	
 	@Test
