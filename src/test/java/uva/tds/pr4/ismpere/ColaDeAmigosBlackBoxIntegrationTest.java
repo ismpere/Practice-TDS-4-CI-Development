@@ -6,6 +6,10 @@ import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
 @Category({Integration.class})
+/**
+ * Clase de test caja negra de integracion de la clase ColaDeAmigos
+ * @author ismpere
+ */
 public class ColaDeAmigosBlackBoxIntegrationTest {
 
 	@Test
@@ -49,8 +53,11 @@ public class ColaDeAmigosBlackBoxIntegrationTest {
 	
 	@Test
 	public void testPuedeColarseFalseSinAmigosColaDeAmigosValido(){
+		Persona a = new Persona("1", "a");
 		Persona b = new Persona("2", "b");
-		ColaDeAmigos cola = new ColaDeAmigos();
+		
+		Persona[] p = {a};
+		ColaDeAmigos cola = new ColaDeAmigos(p);
 		
 		boolean c1 = cola.puedeColarse(b);
 		
@@ -322,7 +329,7 @@ public class ColaDeAmigosBlackBoxIntegrationTest {
 		
 		cola.colar(b);
 		
-		int r = cola.getReservas(b);
+		int r = cola.getReservasRestantes(b);
 		
 		Persona[] p = {b,a};
 		
@@ -387,6 +394,36 @@ public class ColaDeAmigosBlackBoxIntegrationTest {
 		assertNotNull(cola);
 		assertNotNull(p);
 		assertEquals(0, p.length);
+	}
+	
+	@Test
+	public void testGetPersonasColadasColaDeDeAmigosPersonasAtendidasValido(){
+		Persona a = new Persona("1", "a");
+		Persona b = new Persona("2", "b");
+		Persona c = new Persona("3", "c");
+		a.addConocido(b);
+		b.addConocido(a);
+		a.addAmigo(b);
+		b.addAmigo(a);
+		
+		ColaDeAmigos cola = new ColaDeAmigos();
+		
+		
+		cola.pedirVez(a, 2);
+		cola.pedirVez(c, 0);
+		
+		cola.colar(b);
+		
+		cola.atender();
+		
+		Persona[] p = cola.getPersonasColadasPor(a);
+		
+		Persona[] p1 = {a,c};
+		
+		assertNotNull(cola);
+		assertNotNull(p);
+		assertEquals(0, p.length);
+		assertArrayEquals(p1, cola.getPersonas());
 	}
 	
 	@Test
