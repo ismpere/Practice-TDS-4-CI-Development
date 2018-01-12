@@ -188,7 +188,7 @@ public class ColaDeAmigos{
 	 * @return personaParaAtender
 	 * @assert.pre !isEmpty()
 	 */
-	public Persona getPersonaParaAtender() {
+	public Persona getNextAtendido() {
 		assert(!isEmpty());
 		
 		return personas.get(0);

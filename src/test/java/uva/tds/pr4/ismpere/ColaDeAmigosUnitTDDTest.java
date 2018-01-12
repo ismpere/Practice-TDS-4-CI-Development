@@ -70,7 +70,7 @@ public class ColaDeAmigosUnitTDDTest {
 		
 		ColaDeAmigos cola = new ColaDeAmigos(p);
 		
-		Persona p1 = cola.getPersonaParaAtender();
+		Persona p1 = cola.getNextAtendido();
 		
 		assertNotNull(cola);
 		assertNotNull(p1);

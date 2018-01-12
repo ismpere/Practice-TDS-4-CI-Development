@@ -33,7 +33,7 @@ public class ColaDeAmigosSecuenceTest {
 		cola.colar(b);
 		int r1 = cola.getReservasRestantes(a);
 		
-		Persona p1 = cola.getPersonaParaAtender();
+		Persona p1 = cola.getNextAtendido();
 		cola.atender();
 		cola.atender();
 		
@@ -109,10 +109,10 @@ public class ColaDeAmigosSecuenceTest {
 		
 		int r1 = cola.getReservasRestantes(a);
 		
-		Persona p1 = cola.getPersonaParaAtender();
+		Persona p1 = cola.getNextAtendido();
 		cola.atender();
 		
-		Persona p2 = cola.getPersonaParaAtender();
+		Persona p2 = cola.getNextAtendido();
 		
 		boolean e2 = cola.isEmpty();
 		

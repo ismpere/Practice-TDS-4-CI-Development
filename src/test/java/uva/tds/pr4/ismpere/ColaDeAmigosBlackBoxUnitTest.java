@@ -86,10 +86,10 @@ public class ColaDeAmigosBlackBoxUnitTest {
 
 		ColaDeAmigos cola = new ColaDeAmigos(p);
 		
-		Persona p1 = cola.getPersonaParaAtender();
+		Persona p1 = cola.getNextAtendido();
 		cola.atender();
 		
-		Persona p2 = cola.getPersonaParaAtender();
+		Persona p2 = cola.getNextAtendido();
 		
 		Persona[] p3 = {a};
 		
@@ -258,7 +258,7 @@ public class ColaDeAmigosBlackBoxUnitTest {
 	public void testgetPersonaParaAtenderColaDeDeAmigosIsEmptyNoValido(){
 		ColaDeAmigos cola = new ColaDeAmigos();
 		
-		cola.getPersonaParaAtender();
+		cola.getNextAtendido();
 	}
 	
 	@Test (expected = AssertionError.class)
