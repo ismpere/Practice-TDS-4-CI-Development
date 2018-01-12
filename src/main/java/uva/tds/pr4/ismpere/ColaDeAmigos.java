@@ -51,13 +51,13 @@ public class ColaDeAmigos{
 	 * @param p Persona a entrar en la ColaDeAmigos
 	 * @param n Numero de sitios que reserva
 	 * @assert.pre p!=null
-	 * @assert.pre !isInCola(p)
+	 * @assert.pre !contains(p)
 	 * @assert.pre n>0
 	 * @assert.pre n<11
 	 */
 	public void pedirVez(Persona p, int n) {
 		assert(p!=null);
-		assert(!isInCola(p));
+		assert(!contains(p));
 		assert(n>=0);
 		assert(n<11);
 		
@@ -73,7 +73,7 @@ public class ColaDeAmigos{
 	 */
 	public boolean puedeColarse(Persona p) {
 		assert(p!=null);
-		if(isInCola(p) || isEmpty())
+		if(contains(p) || isEmpty())
 			return false;
 		
 		boolean puede = false;
@@ -81,7 +81,7 @@ public class ColaDeAmigos{
 		
 		for(int i=0; i<a.length; i++){
 			Persona pa = a[i];
-			if(isInCola(pa) && pa.isAmigo(p) && pa.tieneReservas()){
+			if(contains(pa) && pa.isAmigo(p) && pa.tieneReservas()){
 				puede = true;
 				break;
 			}
@@ -93,12 +93,12 @@ public class ColaDeAmigos{
 	 * Cuela a una Persona en la ColaDeAmigos
 	 * @param p Persona a colar en la ColaDeAmigos
 	 * @assert.pre p!=null
-	 * @assert.pre !isInCola(p)
+	 * @assert.pre !contains(p)
 	 * @assert.pre puedeColarse(p)
 	 */
 	public void colar(Persona p) {
 		assert(p!=null);
-		assert(!isInCola(p));
+		assert(!contains(p));
 		assert(puedeColarse(p));
 		
 		for(int i=0; i<personas.size(); i++){
@@ -115,10 +115,10 @@ public class ColaDeAmigos{
 	/**
 	 * Devuelve si una persona esta en la ColaDeAmigos
 	 * @param p Persona
-	 * @return isInCola
+	 * @return contains
 	 * @assert.pre p!=null
 	 */
-	public boolean isInCola(Persona p) {
+	public boolean contains(Persona p) {
 		assert(p!=null);
 		
 		if(isEmpty())
@@ -132,11 +132,11 @@ public class ColaDeAmigos{
 	 * @param p Persona
 	 * @return reservas
 	 * @assert.pre p!=null
-	 * @assert.pre isInCola(p)
+	 * @assert.pre contains(p)
 	 */
 	public int getReservas(Persona p) {
 		assert(p!=null);
-		assert(isInCola(p));
+		assert(contains(p));
 		
 		return p.getReservas();
 	}
@@ -145,11 +145,11 @@ public class ColaDeAmigos{
 	 * @param p Persona
 	 * @return reservasRestantes
 	 * @assert.pre p!=null
-	 * @assert.pre isInCola(p)
+	 * @assert.pre contains(p)
 	 */
 	public int getReservasRestantes(Persona p) {
 		assert(p!=null);
-		assert(isInCola(p));
+		assert(contains(p));
 		
 		return p.getReservasRestantes();
 	}
@@ -159,11 +159,11 @@ public class ColaDeAmigos{
 	 * @param p Persona
 	 * @return lista de Personas coladas por p
 	 * @assert.pre p!=null
-	 * @assert.pre isInCola(p)
+	 * @assert.pre contains(p)
 	 */
 	public Persona[] getPersonasColadasPor(Persona p) {
 		assert(p!=null);
-		assert(isInCola(p));
+		assert(contains(p));
 		
 		ArrayList<Persona> coladas = new ArrayList<>();
 		
@@ -217,11 +217,11 @@ public class ColaDeAmigos{
 	 * @param p Persona
 	 * @return posicion
 	 * @assert.pre p!=null
-	 * @assert.pre isInCola(p)
+	 * @assert.pre contains(p)
 	 */
 	public int getPosicion(Persona p) {
 		assert(p!=null);
-		assert(isInCola(p));
+		assert(contains(p));
 		
 		return personas.indexOf(p)+1;
 	}

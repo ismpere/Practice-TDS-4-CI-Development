@@ -41,7 +41,7 @@ public class ColaDeAmigosBlackBoxUnitTest {
 		Persona a = new Persona("1", "a");
 		ColaDeAmigos cola = new ColaDeAmigos();
 		
-		boolean is = cola.isInCola(a);
+		boolean is = cola.contains(a);
 		
 		assertNotNull(cola);
 		assertFalse(is);
@@ -56,7 +56,7 @@ public class ColaDeAmigosBlackBoxUnitTest {
 		
 		ColaDeAmigos cola = new ColaDeAmigos(p);
 		
-		boolean is = cola.isInCola(c);
+		boolean is = cola.contains(c);
 		
 		assertNotNull(cola);
 		assertFalse(is);
@@ -141,7 +141,7 @@ public class ColaDeAmigosBlackBoxUnitTest {
 	public void testIsInColaDeAmigosPersonaNuloNoValido() {
 		ColaDeAmigos cola = new ColaDeAmigos();
 		
-		cola.isInCola(null);
+		cola.contains(null);
 	}
 	
 	@Test (expected = AssertionError.class)
