@@ -124,7 +124,7 @@ public class ColaDeAmigos{
 		if(isEmpty())
 			return false;
 		
-		return !(personas.indexOf(p)==-1);
+		return personas.indexOf(p)!=-1;
 	}
 	/**
 	 * Devuelve el numero de amigos para el que reservo una Persona

@@ -129,7 +129,7 @@ public class Persona{
 		assert(isConocido(p));
 		assert(!isAmigo(p));
 		
-		conocidos.remove(p);
+		conocidos.remove(conocidos.indexOf(p));
 		amigos.add(p);
 	}
 	/**
@@ -154,7 +154,7 @@ public class Persona{
 		if(p==this || this.equals(p))
 			return true;
 		
-		return (conocidos.contains(p) || amigos.contains(p));
+		return (conocidos.indexOf(p)!=-1 || amigos.indexOf(p)!=-1);
 	}
 	/**
 	 * Devuelve si una Persona es amigo
@@ -168,7 +168,7 @@ public class Persona{
 		if(p==this || this.equals(p))
 			return true;
 		
-		return amigos.contains(p);
+		return amigos.indexOf(p)!=-1;
 	}
 	/**
 	 * Elimina un amigo de la Persona
@@ -184,7 +184,7 @@ public class Persona{
 		assert(!p.equals(this));
 		assert(isAmigo(p));
 		
-		amigos.remove(p);
+		amigos.remove(amigos.indexOf(p));
 		conocidos.add(p);
 	}
 	/**
@@ -333,7 +333,7 @@ public class Persona{
 		if(p.length==0)
 			return false;
 		
-		return !(Arrays.asList(p).indexOf(null)==-1);
+		return Arrays.asList(p).indexOf(null)!=-1;
 	}
 	
 	@Override
