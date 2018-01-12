@@ -204,7 +204,7 @@ public class ColaDeAmigosIsolationTDDTest {
 		expect(b.isAmigo(a)).andReturn(true).once();
 		expect(a.tieneReservas()).andReturn(true).times(2);
 		
-		expect(a.colado()).andReturn(false).once();
+		expect(a.getColado()).andReturn(false).once();
 		expect(a.getReservas()).andReturn((int)1).times(2);
 		expect(a.getReservasRestantes()).andReturn((int)0).times(2);
 		

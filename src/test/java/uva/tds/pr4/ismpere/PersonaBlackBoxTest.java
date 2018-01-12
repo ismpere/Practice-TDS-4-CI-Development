@@ -160,7 +160,7 @@ public class PersonaBlackBoxTest {
 		a.setColado(false);
 		
 		assertNotNull(a);
-		assertFalse(a.colado());
+		assertFalse(a.getColado());
 	}
 	
 	@Test
@@ -569,7 +569,7 @@ public class PersonaBlackBoxTest {
 	public void testColadoNotInColaDeAmigosNoValido() {
 		Persona a = new Persona("1", "a");
 		
-		a.colado();
+		a.getColado();
 	}
 	
 	@Test(expected = AssertionError.class)
